@@ -1,0 +1,91 @@
+.box{
+    border-radius: .8vw;
+    margin-bottom: 1.5vw;
+    padding: 1vw;
+}
+.p_vw5{
+    padding: .5vw;
+}
+.br-img{
+    border-radius: .8vw;
+}
+.my-1_5vw{
+    margin: .7vw 0;
+}
+h4{
+    font-size: 1.7vw !important;
+}
+small {
+    font-size: .8vw !important;
+}
+span {
+    font-size: 1vw !important;
+}
+.br{
+    border-radius: .5vw;
+}
+.mb_1vw{
+    margin-bottom: 1vw;
+}
+
+@media (width < 600px){
+    .box{
+        border-radius: 2.8vw;
+        margin-bottom: 2.5vw;
+        padding: 3vw;
+    }
+    .p_vw5{
+        padding: 2.5vw;
+    }
+    .br-img{
+        border-radius: 2.8vw;
+    }
+    .my-1_5vw{
+        margin: 2.7vw 0;
+    }
+    h4{
+        font-size: 2.7vw !important;
+    }
+    small {
+        font-size: 2.8vw !important;
+    }
+    span {
+        font-size: 3vw !important;
+    }
+    .br{
+        border-radius: 2.5vw;
+    }
+    .mb_1vw{
+        margin-bottom: 2vw;
+    }
+}
+
+
+
+
+
+.btn-circle{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 25px;
+    height: 25px;
+    background: #FF54C7;
+    border-radius: 60px;
+}
+
+.pointer:hover{
+    color: #FF54C7;
+}
+
+.containerdiv {
+    border: 0;
+    float: left;
+    position: relative;
+  } 
+  .cornerimage {
+    border: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+   } 

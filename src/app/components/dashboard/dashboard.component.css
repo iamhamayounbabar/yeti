@@ -1,0 +1,163 @@
+.btn_circle {
+    border: .2vw solid #FF54C7;
+    border-radius: 2vw;
+    padding: .7vw;
+}
+
+.card-body {
+    background-color: transparent;
+}
+
+.poppins-medium{
+    font-size: .7vw !important;
+}
+
+.inter-semi-bold{
+    font-size: .9vw !important;
+}
+
+h6{
+    font-size: 1.2vw;
+}
+
+.pink_box {
+    background-color: #1515154f;
+    border: 1px dashed rgba(255, 82, 197, 0.685);
+    padding: 1vw;
+    border-radius: 1vw;
+}
+
+td:first-child {
+    border-radius: .6vw 0 0 .6vw;
+    border: 1px dashed rgba(255, 84, 199, 0.25);
+    border-right: 0;
+    background: #151515;
+    padding: .5vw;
+}
+
+td:last-child {
+    border-radius: 0 .6vw .6vw 0;
+    border: 1px dashed rgba(255, 84, 199, 0.25);
+    border-left: 0;
+    background: #151515;
+    padding: .5vw;
+}
+
+td {
+    border-style: none;
+    border-top: 1px dashed rgba(255, 84, 199, 0.25);
+    border-bottom: 1px dashed rgba(255, 84, 199, 0.25);
+    background: #151515;
+    padding: .5vw;
+}
+
+.padding td{
+    padding-top: .8vw !important;
+    padding-bottom: .8vw !important;
+}
+
+
+table {
+    border-collapse: separate;
+    border-spacing: 0 1.3vw;
+
+}
+
+.text_s_5 {
+    font-size: 10px;
+}
+
+.text_s_10 {
+    font-size: 12px;
+}
+
+h5 {
+    font-size: 1.5vw;
+}
+
+small {
+    font-size: 1vw;
+}
+
+@media (width < 600px) {
+    td:first-child {
+        border-radius: 2vw 0 0 2vw;
+        padding: 2vw;
+    }
+    
+    td:last-child {
+        border-radius: 0 2vw 2vw 0;
+        border: 1px dashed rgba(255, 84, 199, 0.25);
+        border-left: 0;
+        background: #151515;
+        padding: 2vw;
+    }
+    
+    td {
+        padding: 2vw;
+    }
+
+    table {
+        border-collapse: separate;
+        border-spacing: 0 2vw !important;
+    
+    }
+
+    .sm-pe-0{
+        padding-right: 0 !important;
+    }
+    
+    .padding td{
+        padding-top: 2.5vw !important;
+        padding-bottom: 2.5vw !important;
+    }
+    .pink_box {
+        background-color: #1515154f;
+        border: 1px dashed rgba(255, 82, 197, 0.685);
+        padding: 5vw;
+        border-radius: 3vw;
+    }
+
+    .img-h{
+        height: 7vw !important;
+        width:  7vw !important;
+    }
+
+    .poppins-medium{
+        font-size: 2.3vw !important;
+    }
+    
+    .inter-semi-bold{
+        font-size: 3.5vw !important;
+    }
+    h6{
+        font-size: 6vw;
+    }
+
+    .text_s_5 {
+        font-size: 8.5px;
+    }
+
+    .sm-img-10{
+        height: 8vh !important;
+    }
+
+    h5 {
+        font-size: 5vw;
+    }
+
+    small {
+        font-size: 3vw;
+    }
+
+    .btn_circle {
+        border: .2vw solid #FF54C7;
+        border-radius: 6vw;
+        padding: 2vw;
+    }
+
+    .chevron-img{
+        height: 4vh !important;
+        width: 4vh !important;
+    }
+}

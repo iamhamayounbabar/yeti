@@ -1,0 +1,18 @@
+<div id="hero" class="d-none d-md-block">
+    <carousel [cellsToShow]="3" [height]="100" [arrowsOutside]="true" >
+        <ng-container *ngFor="let i of images">
+            <div class="carousel-cell">
+                <img src="{{i.path}}">
+            </div>
+        </ng-container>
+    </carousel>
+</div>
+<div class="d-md-none">
+    <carousel [cellsToShow]="3" [arrows]="false" >
+        <ng-container *ngFor="let i of images">
+            <div  class="carousel-cell">
+                <img src="{{i.path}}">
+            </div>
+        </ng-container>
+    </carousel>
+</div>

@@ -1,0 +1,178 @@
+<div class="container-fluid">
+    <app-navbar></app-navbar>
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            <app-dashboard2 [selectedSwitchType]="selectedSwitch"></app-dashboard2>
+        </div>
+    </div>
+    <div class="position-absolute blurry-circle d-block d-md-none" style=" top: 0; right: 0; z-index: -1;"></div>
+    <div class="row">
+        <div class="col-md-10 mx-auto text-white mt-5vh">
+            <hr class="text-bg-secondary d-none d-md-block" style="margin-bottom: 2vh !important;">
+            <div class="align-items-center d-none d-lg-flex">
+                <div class="position-relative">
+                    <app-filter [filterItems]="filterItems" (onchange)="filtersUpdated($event)"></app-filter>
+                </div>
+                <div class="p-0 line" style="margin-left: 1.5vw; margin-right: 1.5vw;"></div>
+                <div class="position-relative align-items-center">
+                    <input type="text" class="form-control poppins-medium" name="search" id="search"
+                        placeholder="Search by ID or Address"
+                        style="width: 20vw; padding: .5vw; border-radius: 3vw; font-size: .8vw;">
+                    <img src="assets/images/search_icon.png" class="position-absolute"
+                        style="height: 1.5vw;right: 1vw;top: .5vw" alt="">
+                </div>
+                <!---
+                    <div class="ms-auto d-flex justify-content-between align-items-center">
+                        <div class="rounded-5" style="border: 1px solid #FF54C740; width: 9rem;">
+                         <app-toggle-switch *ngIf="!showSmallSwtich" (callback)="selectedType($event)"></app-toggle-switch>
+                        </div> 
+                    </div> -->
+            </div>
+            <div class="row d-lg-none">
+                <div class="col-12 d-flex align-items-center gap-2 pe-4">
+                    <div class="position-relative">
+                        <app-filter [filterItems]="filterItems" (onchange)="filtersUpdated($event)"></app-filter>
+                    </div>
+                    <div class="position-relative align-items-center w-100">
+                        <input type="text" class="form-control rounded-5 p-2 px-3 w-100 text_s_10" name="search"
+                            id="search" placeholder="Search by ID or Address">
+                        <div class="position-absolute" style="right: 12px;top: 3px">
+                            <img src="assets/images/search_icon.png" height="18" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-12 d-flex align-items-center justify-content-between mt-4">
+                        <div class="rounded-5 w-100" style="border: 1px solid #FF54C740;">
+                           <app-toggle-switch *ngIf="showSmallSwtich" (callback)="selectedType($event)"></app-toggle-switch>
+                        </div>
+                    </div> -->
+            </div>
+            <hr class="text-bg-secondary d-none d-md-block" style="margin-top: 2vh !important;">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 position-relative d-none d-md-block">
+            <div class=" position-absolute " style="left: 0; top: 30vh">
+                <img src="assets/images/bg_icon10.svg" style="height: 12vw;" alt="">
+            </div>
+
+            <!-- back ground circle  -->
+            <div class="position-absolute blurry-circle d-none d-md-block" style="top: 30vh; left: 0; z-index: -1;">
+            </div>
+        </div>
+        <div class="col-md-10 mx-auto">
+            <!-- desktop screen table  -->
+            <div class="row d-none d-md-block">
+                <div class="col-12">
+                    <table class="table text-white">
+                        <thead class="text-secondary">
+                            <tr style="font-size: 1.7vh;">
+                                <th style="padding-left: .8vw;">#</th>
+                                <th style="padding-left: .8vw;">TRIBE | NFT</th>
+                                <th style="padding-left: .6vw;">Rank</th>
+                                <th style="padding-left: .6vw;">Sold for</th>
+                                <th style="padding-left: .6vw;">Date</th>
+                                <th style="padding-left: .6vw;">Buyer</th>
+                                <th style="padding-left: .6vw;">Seller</th>
+                                <th style="padding-left: .6vw;">View on</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of activity; let i = index" style="font-size: 1vw;">
+                                <td>{{i + 1}}</td>
+                                <td class="text_pink"><img src="{{data.imageSrc}}" style="height: 6vh; width: 6vh;"
+                                        class="rounded-circle me-2 fw-bold inter-semi-bold" alt="">{{data.tribe}}
+                                    #{{data.yetiId}}</td>
+                                <td>{{data.rank}}</td>
+                                <td>{{data.price}}</td>
+                                <td>{{data.date}}</td>
+                                <td>{{displayAddress(data.toA)}} <button
+                                        style="background-color: transparent !important; border: none;" ngxClipboard
+                                        [cbContent]="data.toA"><img src="/assets/images/copy_icon.png" class="pointer"
+                                            style="height: 2vh;" alt=""></button> </td>
+                                <td class="pt-3">{{displayAddress(data.fromA)}} <button
+                                        style="background-color: transparent !important; border: none;" ngxClipboard
+                                        [cbContent]="data.fromA"><img src="/assets/images/copy_icon.png" class="pointer"
+                                            style="height: 2vh;" alt=""></button> </td>
+                                <td><a href="{{data.craftHistory}}"><img src="/assets/images/craft.png" class="pointer"
+                                            style="height: 6vh;" alt=""></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- mobile screen table  -->
+            <div class="row d-block d-md-none my-3 position-relative">
+                <div class="position-absolute blurry-circle d-block d-md-none" style=" top: 50vh; left: 0; z-index: -1;"></div>
+                <div class="position-absolute blurry-circle d-block d-md-none" style=" top: 150vh; right: 0; z-index: -1;"></div>
+                <div class="position-absolute blurry-circle d-block d-md-none" style=" top: 260vh; left: 0; z-index: -1;"></div>
+                <div class="position-absolute blurry-circle d-block d-md-none" style=" top: 340vh; right: 0; z-index: -1;"></div>
+                <div class="position-absolute blurry-circle d-block d-md-none" style=" top: 420vh; left: 0; z-index: -1;"></div>
+                <div class="position-absolute blurry-circle d-block d-md-none" style=" top: 540vh; right: 0; z-index: -1;"></div>
+                <div class="col-11 my-3 mx-auto p-2 rounded-3" *ngFor="let data of activity"
+                    style="border: 1px dashed #FF54C740; background-color: #151515;">
+                    
+                    <div class="d-flex">
+                        <span class="text_pink"><img src="{{data.imageSrc}}" height="40" width="40"
+                                class="rounded-circle me-2" alt="">{{data.tribe}} #{{data.yetiId}}</span>
+                        <a class="ms-auto" href="https://www.example.com"><img src="/assets/images/craft.png"
+                                height="30" alt=""></a>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 my-3 text-white">
+                            <div class="ps-2 pe-2 pb-2 rounded-3" style="border: 1px dashed #FF54C740;">
+                                <span class=" text_s_10 text-secondary">Rank</span>
+                                <h6 class="m-0 text_s_13">{{data.rank}}</h6>
+                            </div>
+                        </div>
+                        <div class="col-4 my-3 text-white">
+                            <div class="ps-2 pe-2 pb-2 rounded-3" style="border: 1px dashed #FF54C740;">
+                                <span class=" text_s_10 text-secondary">Sold for</span>
+                                <h6 class="m-0 text_s_13">{{data.price}}</h6>
+                            </div>
+                        </div>
+                        <div class="col-4 my-3 text-white">
+                            <div class="ps-2 pe-2 pb-2 rounded-3" style="border: 1px dashed #FF54C740;">
+                                <span class=" text_s_10 text-secondary">Date</span>
+                                <h6 class="m-0 text_s_13">{{data.date}}</h6>
+                            </div>
+                        </div>
+                        <div class="col-6 text-white">
+                            <div class="ps-2 pe-2 pb-2 rounded-3" style="border: 1px dashed #FF54C740;">
+                                <span class=" text_s_10 text-secondary">Buyer</span>
+                                <h6 class="m-0 text_s_13">{{displayAddress(data.toA)}} <button
+                                        style="background-color: transparent !important; border: none;" ngxClipboard
+                                        [cbContent]="data.toA"> <img src="/assets/images/copy_icon.png" class="ms-2"
+                                            height="15" alt=""></button></h6>
+                            </div>
+                        </div>
+                        <div class="col-6 text-white">
+                            <div class="ps-2 pe-2 pb-2 rounded-3" style="border: 1px dashed #FF54C740;">
+                                <span class=" text_s_10 text-secondary">Seller</span>
+                                <h6 class="m-0 text_s_13">{{displayAddress(data.fromA)}} <button
+                                        style="background-color: transparent !important; border: none;" ngxClipboard
+                                        [cbContent]="data.fromA"> <img src="/assets/images/copy_icon.png" class="ms-2"
+                                            height="15" alt=""></button></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="position-relative d-none d-md-block">
+            <div class=" position-absolute " style="right: 0; bottom: 0;">
+                <img src="assets/images/bg_icon11.svg" style="height: 12vw;" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 mx-auto text-center position-relative sm-mb-0" style="margin-bottom: 5vh; margin-top: 5vh;">
+        <button class="btn btn_pink w-75 p-2" (click)="loadmore()">Load more</button>
+        <div>
+            <span class="text-white" style="font-size: 1.7vh;">{{activity.length}} showing out of {{total}}</span>
+        </div>
+        <div class="position-absolute blurry-circle d-none d-md-block" style="top: 0; left: -10vw; z-index: -1;"></div>
+        <div class="position-absolute blurry-circle d-block d-md-none" style=" bottom: -30vh; right: 0; z-index: -1;"></div>
+    </div>
+
+    <!-- back ground icon  -->
+</div>

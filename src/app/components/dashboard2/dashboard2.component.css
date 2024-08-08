@@ -1,0 +1,24 @@
+.br_2vw{
+    border-radius: .7vw;
+}
+
+.img_h{
+    height: 5vh;
+}
+
+span {
+    font-size: 1.2vw;
+}
+
+.h2vh{
+    height: 2vh;
+}
+
+@media (width < 450px) {
+    .br_2vw{
+        border-radius: 2vw;
+    }
+    span {
+        font-size: 2.2vw;
+    }
+}

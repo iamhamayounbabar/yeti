@@ -1,0 +1,14 @@
+.carousel{
+    height: 12vw !important;
+}
+
+@media (width < 600px){
+    .carousel{
+        height: 22vw !important;
+    }
+}
+@media (width > 3500px){
+    .carousel{
+        height: 10vw !important;
+    }
+}

@@ -1,0 +1,49 @@
+    <div class="row">
+        <div class="col-10 mx-auto">
+            <div class="d-none d-md-flex justify-content-between align-items-center" style="margin-top: 5vh;">
+                <div class="d-flex text-white">
+                    <img src="assets/images/logo.png" class="navItem" style="height: 4vw; margin-right: 3.5vw;" alt="logo_img" routerLink="/ysc">
+                    <span routerLink="/ysc" routerLinkActive="active_navItem dot_below_text" 
+                        class="navItem align-self-center poppins-semi-bold" style="font-size: 2.5vh; margin-right: 3.5vw;">YTSC</span>
+                    <span routerLink="/mint" routerLinkActive="active_navItem dot_below_text"
+                        class="navItem align-self-center poppins-semi-bold" style="font-size: 2.5vh; margin-right: 3.5vw;">Mint</span>
+                    <span routerLink="/farm-detail" routerLinkActive="active_navItem dot_below_text"
+                        class="navItem align-self-center poppins-semi-bold" style="font-size: 2.5vh; margin-right: 3.5vw;">Staking</span> 
+                    <span routerLink="/ranking" routerLinkActive="active_navItem dot_below_text"
+                        class="navItem align-self-center poppins-semi-bold" style="font-size: 2.5vh; margin-right: 3.5vw;">Ranking</span>
+                    <span routerLink="/market-activity" routerLinkActive="active_navItem dot_below_text"
+                        class="navItem align-self-center poppins-semi-bold" style="font-size: 2.5vh; margin-right: 3.5vw;">Market Activity</span>
+                </div>
+                <div class="d-flex">
+                    <div *ngIf="connected" class="px-3 p-1 pink_outline me-3 text-white align-self-center">
+                        {{displayAddress(address!)}}</div>
+                        <app-connect-wallet [id]="'1'" [isAuthorized]="connected" (authenticated)="disconnect()"></app-connect-wallet>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="d-block d-md-none text-white on-top  {{ show == true ? 'h100vh bg-black ' : '' }}">
+    <div class="d-flex pt-3 ps-0 justify-content-between align-items-center container">
+        <img src="assets/images/logo.png" alt="logo_img" height="55" routerLink="/ysc">
+        <div class="d-flex align-items-center">
+            <div class="d-flex gap-3 me-3">
+                <div *ngIf="connected" class="pink_outline me-3 text-white align-self-center text_s_8">
+                    {{displayAddress(address!)}}</div>
+                <app-connect-wallet [id]="'2'" [isAuthorized]="connected"
+                    (authenticated)="disconnect()"></app-connect-wallet>
+            </div>
+            <img src="assets/images/menu.png" height="20" class="pointer" (click)="show=!show" alt="menu toggle">
+        </div>
+    </div>
+    <div class="{{show == true ? 'd-block show-sidebar' : 'hide-sidebar'}} mt-3 fw-bold gap-3">
+        <div class="d-grid gap-2 ps-3">
+            <span routerLink="/ysc" class="d-block navItem">YSC</span>
+            <span routerLink="/mint" class="d-block navItem">Mint</span>
+            <!-- <span routerLink="/app" class="d-block navItem">App</span> -->
+            <span routerLink="/ranking" class="d-block navItem">Ranking</span>
+            <span routerLink="/market-activity" class="d-block navItem">Market activity</span>
+        </div>
+        <div class="nav_ellipse"></div>
+    </div>
+</div>

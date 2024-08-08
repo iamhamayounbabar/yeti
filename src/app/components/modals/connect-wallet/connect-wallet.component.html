@@ -1,0 +1,240 @@
+<button *ngIf="!isAuthorized" class="btn btn_pink align-self-center d-none d-md-block" data-bs-toggle="modal"
+    [attr.data-bs-target]="'#connect-wallet1' + id" (click)="displayModal()">
+    Connect
+</button>
+<button *ngIf="!isAuthorized" class="btn btn_pink align-self-center d-block d-md-none" data-bs-toggle="modal"
+    [attr.data-bs-target]="'#connect-wallet2' + id" (click)="displayModal()">
+    Connect
+</button>
+
+<button *ngIf="isAuthorized" class="btn btn_pink align-self-center" (click)="disconnect()">
+    Disconnect
+</button>
+
+<div class="d-none d-md-block">
+    <div class="modal fade" [id]="'connect-wallet1' + id" tabindex="-1" aria-labelledby="connect-walletLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered ">
+            <div class="modal-content text-white"
+                style=" width: 37vw !important; padding: 1vw !important; border: 2px solid #FF54C780; background: #151515; z-index: 9999999; border-radius: 1vw;">
+                <div class="modal-header border-0" style="padding: 2vh !important;">
+                    <h5 class="modal-title" id="connect-walletLabel">SIGN IN WITH</h5>
+                    <button type="button" class="btn-close" #closeModal data-bs-dismiss="modal" aria-label="Close"
+                        (click)="showModal = false"></button>
+                </div>
+                <hr class="m-0">
+                <div class="modal-body">
+                    <div class="row pe-2">
+                        <div class="col-md-2 p-0 text-center">
+                            <span class="text_pink">Step 1 :</span>
+                        </div>
+                        <div class="col-md-10 col-7 mx-auto  p-0 d-flex justify-content-between">
+                            <span class="text-white mbl_fs">Select your crypto chain</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="connect-wallet" class="col-12 p-0">
+                            <carousel [cellsToShow]="5" style="height: 15vh; width: 34vw !important;"
+                                [arrowsOutside]="true" *ngIf="showModal">
+                                <ng-container *ngFor="let data of crypto_chain; let i = index">
+                                    <div class="carousel-cell d-flex align-items-center">
+                                        <div class="mx-auto pointer selected"
+                                            style="padding: 1vw; border-radius: .6vw; ">
+                                            <img src="{{data.img}}" style="height: 5vh; width: 5vh;">
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </carousel>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="row pe-2">
+                        <div class="col-md-2 p-0 text-center">
+                            <span class="text_pink">Step 2 :</span>
+                        </div>
+                        <div class="col-md-10 col-5 mx-auto p-0 d-flex justify-content-between">
+                            <span class="text-white mbl_fs">Select your wallet</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="connect-wallet" class="p-0">
+                            <carousel [cellsToShow]="5" style="height: 15vh; width: 34vw !important;"
+                                [arrowsOutside]="true" *ngIf="showModal">
+
+                                <div class="carousel-cell d-flex align-items-center">
+                                    <div class="mx-auto pointer {{hanaSelected == true ? 'selected' : 'not-selected'}}"
+                                        style="padding: 1vw; border-radius: .6vw; " (click)="LoginUsingIconex()">
+                                        <img src="assets/images/hana.png" style="height: 5vh; width: 5vh;">
+                                    </div>
+                                </div>
+
+                                <div class="carousel-cell d-flex align-items-center">
+                                    <div class="mx-auto pointer {{ledgerSelected == true ? 'selected' : 'not-selected'}}"
+                                        style="padding: 1vw; border-radius: .6vw; " (click)="LoginUsingLedger()"
+                                        data-bs-toggle="modal" data-bs-target="#ledgerAddressModal"
+                                        data-bs-dismiss="modal">
+                                        <img src="assets/images/symbol5.svg" style="height: 5vh; width: 5vh;">
+                                    </div>
+                                </div>
+
+                            </carousel>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mx-auto">
+                            <h6 class="text_pink text-center mb-0">USE AT YOUR OWN RISK</h6>
+                        </div>
+                        <div class="col-9 text-center mx-auto text-white">
+                            <span class="fs0_9vw">Project contributors are not liable for any lost
+                                or stolen
+                                funds.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="position-absolute sm_circle" style="right: 8vw; bottom: 8vh; z-index: 1;"></div>
+                <div class="position-absolute sm_circle" style="left: 6vw; top: 5vh; z-index: 1;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="d-block d-md-none">
+    <div class="modal fade" [id]="'connect-wallet2' + id" tabindex="-1" aria-labelledby="connect-walletLabel"
+        aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="modal-content text-white" style="border: 2px solid #FF54C780; background: #151515; z-index: 1;">
+                <div class="modal-header border-0 ">
+                    <h5 class="modal-title" id="connect-walletLabel">SIGN IN WITH</h5>
+                    <button type="button" class="btn-close" #closeModal data-bs-dismiss="modal" aria-label="Close"
+                        (click)="showModal = false"></button>
+                </div>
+                <hr class="m-0">
+                <div class="modal-body">
+                    <div class="row pe-2">
+                        <div class="col-md-2 p-0 text-center">
+                            <span class="text_pink">Step 1 :</span>
+                        </div>
+                        <div class="col-md-10 col-7 mx-auto  p-0 d-flex justify-content-between">
+                            <span class="text-white mbl_fs">Select your crypto chain</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="connect-wallet" class="col-12 p-0">
+                            <carousel [cellsToShow]="5" [arrows]="false" [height]="120" *ngIf="showModal">
+                                <ng-container *ngFor="let data of crypto_chain; let i = index">
+                                    <div class="carousel-cell d-flex align-items-center">
+                                        <div class="col-md-9 col-12 mx-auto p-3 rounded-3 pointer selected">
+                                            <img src="{{data.img}}" style="height: 30px; width: 30px;">
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </carousel>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="row pe-2">
+                        <div class="col-md-2 p-0 text-center">
+                            <span class="text_pink">Step 2 :</span>
+                        </div>
+                        <div class="col-md-10 col-5 mx-auto p-0 d-flex justify-content-between">
+                            <span class="text-white mbl_fs">Select your wallet</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="connect-wallet" class="col-12 p-0">
+                            <carousel [cellsToShow]="5" [arrows]="false" [height]="120" *ngIf="showModal">
+
+                                <div class="carousel-cell d-flex align-items-center">
+                                    <div class="col-md-9 col-12 mx-auto p-3 rounded-3 pointer {{hanaSelected == true ? 'selected' : 'not-selected'}}"
+                                        (click)="LoginUsingIconex()">
+                                        <img src="assets/images/hana.png" style="height: 30px; width: 30px;">
+                                    </div>
+                                </div>
+                                <div class="carousel-cell d-flex align-items-center">
+                                    <div class="col-md-9 col-12 mx-auto p-3 rounded-3 pointer {{ledgerSelected == true ? 'selected' : 'not-selected'}}"
+                                        (click)="LoginUsingLedger()" data-bs-toggle="modal"
+                                        data-bs-target="#ledgerAddressModal" data-bs-dismiss="modal">
+                                        <img src="assets/images/symbol5.svg" style="height: 30px; width: 30px;">
+                                    </div>
+                                </div>
+
+                            </carousel>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mx-auto">
+                            <h5 class="text_pink text-center mb-0">USE AT YOUR OWN RISK</h5>
+                        </div>
+                        <div class="col-9 text-center mx-auto text-white">
+                            <span class="fs0_9vw">Project contributors are not liable for any lost
+                                or stolen
+                                funds.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="position-absolute circle d-block d-md-none" style="right: 30px; top: 0; z-index: 1;"></div>
+                <div class="position-absolute circle d-block d-md-none" style="left: 30px; bottom: 30px; z-index: 1;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="ledgerAddressModal" tabindex="-1" aria-labelledby="ledgerAddressModal" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered">
+        <div class="modal-content text-white" style="border: 2px solid #FF54C780; background: #151515; z-index: 1;">
+            <div class="modal-header border-0">
+                <span class="fw-bold ms-0 text-start" style="font-size: 0.9vw;">Select address</span>
+                <button type="button" class="btn-close" #closeModalLedger data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-6 text-white">
+                        <h6 class="text-white">Address</h6>
+                    </div>
+                    <div class="col-3 text-white">
+                        <h6 class="text-white">Value</h6>
+                    </div>
+                    <div class="col-3 text-white text-end">
+                        <h6 class="text-white mx-2">Action</h6>
+                    </div>
+                </div>
+                <div class="row row-border py-2" *ngFor="let item of ledgerAddress; let i = index;">
+                    <div class="col-6 text-white" style="display:table-cell; vertical-align: middle">
+                        {{displayAddress(item.address!)}}
+                    </div>
+                    <div class="col-3 text-white" style="display:table-cell; vertical-align: middle">
+                        {{displayBalance(item.balance!) | number: '1.1-2'}} ICX
+                    </div>
+                    <div class="col-3 text-white text-end">
+                        <button class="btn btn_pink align-self-center fs1_3vw"
+                            (click)="SelectLedgerAddress(item.address!, item.point!)">Select</button>
+                    </div>
+                </div>
+
+                <div class="row row-border mt-3">
+                    <div class="col-12 text-end mt-2">
+                        <button class="btn selected align-self-center fs1_3vw text-white"
+                            *ngIf="pageNumber > 0 && ledgerAddress.length > 0" (click)="loadPrevious()">
+                            < Prev 5</button>
+                                <button class="btn selected align-self-center fs1_3vw text-white"
+                                    *ngIf="ledgerAddress.length > 0" (click)="loadNext()">Next 5 ></button>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="position-absolute circle d-block d-md-none" style="left: 0; top: 0; z-index: 1;"></div>
+                <div class="position-absolute circle d-block d-md-none" style="right: 70px; bottom: 80px; z-index: 1;">
+                </div>
+                <div class="position-absolute circle d-none d-md-block" style="right: 70px; bottom: 80px; z-index: 1;">
+                </div>
+                <div class="position-absolute circle d-none d-md-block" style="left: 0; top: 0; z-index: 1;"></div> -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+input {
+    border: 1px solid #FF54C740;
+    background-color: transparent;
+}
+
+input:focus {
+    box-shadow: none;
+    background-color: transparent;
+    color: white;
+    border: 1px solid #FF54C740;
+}
+
+
+input::placeholder {
+    color: lightgray;
+}
+
+input[_ngcontent-wbv-c7] {
+    background-color: transparent;
+}
+
+.col-1 {
+    width: 0 !important;
+}
+
+td:first-child {
+    border-radius: .8vw 0 0 .8vw;
+    border: 1px dashed #FF54C740;
+    font-family: 'inter' !important;
+    font-weight: 600 !important;
+    border-right: 0;
+    background: #151515;
+    padding-top: 2.5vh !important;
+    padding-left: 1vw !important;
+}
+
+td:last-child {
+    border-radius: 0 .8vw .8vw 0;
+    border: 1px dashed #FF54C740;
+    font-family: 'inter' !important;
+    font-weight: 600 !important;
+    border-left: 0;
+    background: #151515;
+    padding: 1vh !important;
+}
+
+td {
+    border-style: none;
+    border-top: 1px dashed #FF54C740;
+    border-bottom: 1px dashed #FF54C740;
+    background: #151515;
+    font-family: 'inter' !important;
+    font-weight: 600 !important;
+    padding: 1vh !important;
+}
+
+table>thead:not(caption)>*>* {
+    border-bottom-width: 0;
+    font-family: poppins !important;
+    font-weight: 500 !important;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0 2vh;
+}
+

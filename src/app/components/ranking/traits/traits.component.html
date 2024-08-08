@@ -1,0 +1,328 @@
+<div class="container-fluid">
+    <app-navbar></app-navbar>
+    <!-- back ground circle  -->
+    <div class="position-absolute sm_circle d-block d-md-none" style=" top: 20%; left: 0; z-index: -1;"></div>
+    <div class="position-absolute sm_circle d-block d-md-none" style=" top: 35%;  z-index: -1;"></div>
+    <div class="position-absolute sm_circle d-block d-md-none" style=" top: 65%;  z-index: -1;"></div>
+    <div class="position-absolute blurry-circle d-none d-md-block" style="top: 0; left: 0; z-index: -1;"></div>
+    <div class="row">
+        <div class="col-10 mx-auto">
+            <div class="row py-5 mb-5" *ngIf="selectedSwitch=='Yeti'">
+                <div class="col-12 mx-auto pb-5">
+                    <div class="row">
+                        <div class="col-md-3 text-white box" style="background-color: #1515154f;
+                        border: 1px solid rgba(255, 84, 199, 0.15);">
+                            <div>
+                                <img [src]="img" class="br-img" width="100%" alt="">
+                                <div class="d-flex my-1_5vw">
+                                    <h4 class="my-auto inter-bold">Yeti #{{id}}</h4>
+                                    <!--<img src="assets/images/edit_icon.svg" class="pointer rounded-circle p-1 ms-2 btn_pink"
+                                        height="25" width="25" alt=""> -->
+                                </div>
+                            </div>
+                            <div class="col-12 mx-auto justify-content-between d-flex br p_vw5"
+                                style="border: 1px solid #FF54C740;background-color: #151515;">
+                                <small class="inter-semi-bold my-auto">Unclaimed $FRMD</small>
+                                <div class="d-flex align-items-center">
+                                    <span class="my-auto me-2 text_pink inter-semi-bold">{{unclaimedFrmd}}</span>
+                                    <button class="btn btn_pink" (click)="claim()">claim</button>
+                                </div>
+                            </div>
+                            <div class="col-12 mx-auto justify-content-between d-flex br p_vw5 my-1_5vw"
+                                style="border: 1px solid #FF54C740;background-color: #151515;">
+                                <small class="my-auto">Day remaining</small>
+                                <span class="my-auto text_pink  fw-bold">{{remainingDays}}</span>
+                            </div>
+                            <div  *ngIf="listedPrice > 0" class="col-12 mx-auto justify-content-between d-flex br my-1_5vw p_vw5"
+                                style="border: 1px solid #FF54C740;background-color: #151515;">
+                                <small class="my-auto inter-semi-bold">Selling price</small>
+                                <div class="d-flex">
+                                    <span class="my-auto text_pink me-2 fw-bold">{{listedPrice | number}} ICX</span>
+                                    <a href="https://craft.network/nft/ytsc:{{id}}">
+                                        <button class="btn btn_pink ">Buy</button></a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8 col-5 mx-auto">
+                                    <button class=" btn btn_pink w-100" (click)="close()">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9 col-12 text-white" style="padding-left: 1.7vw;">
+                            <div class="row" style="padding-left: 1.7vw;">
+                                <div class="col-md-3 d-flex justify-content-between">
+                                    <span class="p_vw5 {{tab == 1 ? ('text_pink bottom-pink-border') : ''}} pointer inter-bold"
+                                        (click)="showTraits()">TRAITS</span>
+                                    <!--<span
+                                        class="p-2 {{tab == 2 ? ('text_pink bottom-pink-border') : ''}} inter-bold">DETAILS (soon)</span> -->
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="row" *ngIf="tab==1">
+                                <div class="col-md-4 my-2" *ngFor="let data of yetiTrait">            
+                                    <div class=" br p_vw5 d-flex justify-content-between"
+                                        style="border: .1vw solid #FF54C726; background-color: #1515154f;">
+                                        <div>
+                                            <small class="m-0 text-white poppins-medium d-block">{{data.traitType}}</small>
+                                            <span class="text_pink  inter-semi-bold">{{data.traitValue}}</span>
+                                        </div>
+                                        <div class="text-end">
+                                            <small class="m-0 text-white poppins-medium d-block">%Yetis have this trait</small>
+                                            <span class="text_pink me-1 inter-semi-bold">{{data.traitPerc}}%</span>
+                                            <span class="text-white poppins-medium">{{data.traitCount}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="tab==2">
+                                <div class="row pt-2">
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-md-4 my-1_5vw">
+                                                <div class="br p_vw5" style="border: .1vw solid #FF54C726; background-color: #1515154f;">
+                                                    <div>
+                                                        <small class="m-0 text-secondary poppins-medium">Collection</small>
+                                                    </div>
+                                                    <div  style="margin-top: .7vw;">
+                                                        <span class="text_pink inter-semi-bold">Yeti Strong Club</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8 my-1_5vw">
+                                                <div class="br p_vw5" style="border: .1vw solid #FF54C726; background-color: #1515154f;">
+                                                    <div>
+                                                        <small class="m-0 text-secondary poppins-medium">Owner</small>
+                                                    </div>
+                                                    <div class="d-flex justify-content-between" style="margin-top: .7vw;">
+                                                        <div>
+                                                            <span class="text_pink inter-semi-bold">{{address!}}</span>
+                                                        </div>
+                                                        <div>
+                                                            <img src="assets/images/copy_icon.png" class="pointer" style="height: 2vh;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                       
+                                        <div class="row">
+                                            <div class="col-md-6 my-3">
+                                                <span class="inter-semi-bold">History</span>
+                                                <div class="col-md-12 rounded-3 p-1 mt-3" *ngFor="let data of yetiSaleHistory"
+                                                    style="border: 1px solid #FF54C726; background-color: #1515154f;">
+                                                    <div class="row">
+                                                        <div class="col-1 my-auto">
+                                                            <img [src]="img" height="40" width="40" class="rounded-circle border" alt="">
+                                                        </div>
+                                                        <div class="col-10 my-auto ms-2">
+                                                            <div class="row justify-content-between">
+                                                                <div class="col">
+                                                                    <span class="text_pink ms-1 me-3 text_s_15 inter-semi-bold">{{data.to | slice: 0:8}}...{{data.to | slice:34:42}}</span>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <span class="ms-1 text_s_10 poppins-medium">{{data.type}}</span>
+                                                                </div>
+                                                                <div class="col text-end" >
+                                                                    <span class="ms-1 text_s_10">{{data.timestamp/1000 | date}}</span>
+                                                                </div>
+                                                                
+                                
+                                                            </div>
+                                                        </div>
+                                                      
+                                                    </div>
+                                                </div>
+                                            </div>
+                                
+                                            <div class="col-md-6 my-1_5vw">
+                                                <span class="inter-semi-bold">Active offers</span>
+                                                <div class="row">
+                                                    <div style="font-size: 1.7vh;" class="p_vw5 col-md-8 col-7 justify-content-between d-flex">
+                                                        <div>
+                                                            <span class="text-secondary poppins-medium">Offered Price</span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="text-secondary poppins-medium">Offered By</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                 <div class="col-md-12 br p_vw5 mb_1vw" *ngFor="let data of offers"
+                                                    style="border: 1px solid #FF54C726;">
+                                                    <div class="d-flex align-items-center p_vw5 justify-content-between ">
+                                                        <span class="text_pink inter-semi-bold">{{data.price}}</span>
+                                                        <span class="poppins-medium">{{data.offerby}}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row py-5 mb-5" *ngIf="selectedSwitch=='Farms'">
+                <div class="col-12 mx-auto pb-5">
+                    <div class="row">
+                        <div class="col-md-4 rounded-4 text-white mb-4" style="background-color: #1515154f;
+                        border: 1px solid rgba(255, 84, 199, 0.15);">
+                            <div>
+                                <img [src]="img" class="rounded-4 mt-3" width="100%" alt="">
+                                <div class="d-flex my-3">
+                                    <h4 class="my-auto">Farm #{{id}}</h4>
+                                    <!--<img src="assets/images/edit_icon.svg" class="pointer rounded-circle p-1 ms-2 btn_pink"
+                                        height="25" width="25" alt=""> -->
+                                </div>
+                            </div>
+                            <div class="col-12 mx-auto justify-content-between d-flex rounded-3 py-2 px-2"
+                                style="border: 1px solid #FF54C740;background-color: #151515;">
+                                <small class="my-auto text_s_13">Unclaimed $FRMD</small>
+                                <div class="d-flex">
+                                    <span class="my-auto me-2 text_pink text_s_15">0</span>
+                                   <!--  <button class="btn btn_pink pe-2 pt-0 pb-0 ps-2 pb-1" (click)="claim()">claim</button> -->
+                                </div>
+                            </div>
+                          
+                            <div  *ngIf="listedPrice > 0" class="col-12 mx-auto justify-content-between d-flex mt-2 rounded-3 py-2 px-2"
+                                style="border: 1px solid #FF54C740;background-color: #151515;">
+                                <small class="my-auto text_s_13">Selling price</small>
+                                <div class="d-flex">
+                                    <h6 class="my-auto text_pink me-2 text_s_15">{{listedPrice}} ICX</h6>
+                                    <a href="https://craft.network/nft/ytsc:{{id}}"><button class="btn small btn_pink pe-3 pt-0 pb-0 ps-3 pb-1">Buy</button></a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 col-4 mx-auto my-3">
+                                    <button class=" btn btn_pink w-100 pb-2" (click)="close()">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-12 text-white ps-4">
+                            <div class="row ps-3">
+                                <div class="col-md-3 d-flex justify-content-between">
+                                    <span class="p-2 {{tab == 1 ? ('text_pink bottom-pink-border') : ''}} pointer"
+                                        (click)="showTraits()">TRAITS</span>
+                                    <!--<span
+                                        class="p-2 {{tab == 2 ? ('text_pink bottom-pink-border') : ''}}">DETAILS (soon)</span> -->
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="row" *ngIf="tab==1">
+                                <div class="col-md-4 my-2" *ngFor="let p of farmTrait.attributes">            
+                                    <div class=" rounded-3 p-2 d-flex justify-content-between"
+                                        style="border: 1px solid #FF54C726; background-color: #1515154f;">
+                                        <div>
+                                            <h6 class="m-0 text_s_10 text-white">{{p.trait_type}}</h6>
+                                            <span class="text_pink text_s_15">{{p.value}}</span>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="tab==2">
+                                <div class="row pt-2">
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-md-4 my-2">
+                                                <div class="rounded-3 p-2" style="border: 1px solid #FF54C726; background-color: #1515154f;">
+                                                    <div>
+                                                        <h6 class="m-0 text_s_10 text-secondary">Collection</h6>
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <span class="text_pink text_s_15">Yeti Strong Club</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8 my-2">
+                                                <div class=" rounded-3 p-2 " style="border: 1px solid #FF54C726; background-color: #1515154f;">
+                                                    <div>
+                                                        <h6 class="m-0 text_s_10 text-secondary">Owner</h6>
+                                                    </div>
+                                                    <div class="mt-2 d-flex justify-content-between">
+                                                        <div>
+                                                            <span class="text_pink text_s_15">{{address!}}</span>
+                                                        </div>
+                                                        <div>
+                                                            <img src="assets/images/copy_icon.png" class="pointer" height="13" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                       
+                                        <div class="row">
+                                            <div class="col-md-6 my-3">
+                                                <span class="">History</span>
+                                                <div class="col-md-12 rounded-3 p-1 mt-3" *ngFor="let data of yetiSaleHistory"
+                                                    style="border: 1px solid #FF54C726; background-color: #1515154f;">
+                                                    <div class="row">
+                                                        <div class="col-1 my-auto">
+                                                            <img [src]="img" height="40" width="40" class="rounded-circle border" alt="">
+                                                        </div>
+                                                        <div class="col-10 my-auto ms-2">
+                                                            <div class="row justify-content-between">
+                                                                <div class="col">
+                                                                    <span class="text_pink ms-1 me-3 text_s_15">{{data.to | slice: 0:8}}...{{data.to | slice:34:42}}</span>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <span class="ms-1 text_s_10">{{data.type}}</span>
+                                                                </div>
+                                                                <div class="col text-end" >
+                                                                    <span class="ms-1 text_s_10">{{data.timestamp/1000 | date}}</span>
+                                                                </div>
+                                                                
+                                
+                                                            </div>
+                                                        </div>
+                                                      
+                                                    </div>
+                                                </div>
+                                            </div>
+                                
+                                            <div class="col-md-6 my-1_5vw">
+                                                <span class="inter-semi-bold">Active offers</span>
+                                                <div class="row">
+                                                    <div style="font-size: 1.7vh;" class="p_vw5 col-md-8 col-7 justify-content-between d-flex">
+                                                        <div>
+                                                            <span class="text-secondary">Offered Price</span>
+                                                        </div>
+                                                        <div>
+                                                            <span class="text-secondary">Offered By</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                 <div class="col-md-12 br p_vw5 mb_1vw" *ngFor="let data of offers"
+                                                    style="border: 1px solid #FF54C726; margin-bottom: 1vw;">
+                                                    <div class="d-flex align-items-center p_vw5 justify-content-between ">
+                                                        <span class="text_pink ">{{data.price}}</span>
+                                                        <span>{{data.offerby}}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- back ground icon  -->
+    <div class="row position-relative">
+        <div class="col-12  d-none d-md-block">
+            <div class=" position-absolute " style="right: 0; bottom:5vh;">
+                <img src="assets/images/bg_icon9.svg" style="height: 12vw;" alt="">
+            </div>
+            <div class="position-absolute blurry-circle d-none d-md-block" style="bottom:-70px; right: 0; z-index: -1;"></div>
+        </div>
+        <!-- back ground circle  -->
+        <div class="position-absolute blurry-circle d-none d-md-block" style="bottom:220px; left: 70px; z-index: -1;"></div>
+    </div>
+</div>

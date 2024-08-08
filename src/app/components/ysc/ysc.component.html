@@ -1,0 +1,514 @@
+<div class="container-fluid position-relative">
+    <img src="assets/images/bg_icon1.png" class="d-none d-md-block position-absolute "
+        style="right: 0; top: 187vh; height: 13vw;">
+    <div class="row position-relative">
+        <div class="bg-img ">
+            <div class="row position-relative">
+                <div class="position-absolute sm_circle d-block d-md-none" style=" top: 0; left: 0; z-index: 1;">
+                </div>
+                <app-navbar style="position: absolute; z-index: 999999; width: 100%;"></app-navbar>
+                <div class="col-md-6 text-center mx-auto mt-15vh mt-15vh-text sm-mt-15vh text-white " style="z-index: 99999;">
+                    <h1 class="fw-bold text_15">Discover the</h1>
+                    <h1 class="fw-bold text_15">Yeti Strong Club</h1>
+                    <h6 class="inter-font sm-text-3">Gamified, NFT Staking and Crypto Farms!</h6>
+                    <button class="btn btn_pink" routerLink="/mint" style="margin-top: 2vh; ">Mint now</button>
+                </div>
+            </div>
+            <!-- add carousel -->
+            <div class="row">
+                <div class="col-md-6 mx-auto mt-5vh" style="z-index: 1;">
+                    <app-carousel></app-carousel>
+                </div>
+            </div>
+        </div>
+        <div class="hero_shadow position-absolute"></div>
+    </div>
+    <div class="row d-md-block d-none">
+        <div class="col-10 mx-auto mt-2vh">
+            <div class="d-flex justify-content-center gap-1vw">
+                <div class="col-2">
+                    <div class="box" style="height: 17vh;">
+                        <h1 class="text_pink m-0">{{yetiMinted}}</h1>
+                        <small class="text-secondary m-0">YETI NFTs minted</small>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="box" style="height: 17vh;">
+                        <h1 class="text_pink m-0">{{farmMinted}}</h1>
+                        <small class="text-secondary m-0">Farm NFTs minted</small>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="box" style="height: 17vh;">
+                        <h1 class="text_pink m-0">soon</h1>
+                        <small class="text-secondary m-0">$FRMD farmed daily</small>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="box" style="height: 17vh;">
+                        <h1 class="text_pink m-0">soon</h1>
+                        <small class="text-secondary m-0">Unique holders</small>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="box" style="height: 17vh;">
+                        <h1 class="text_pink m-0">${{frmdPrice | number: '1.1-4'}} </h1>
+                        <small class="text-secondary m-0" [ngClass]="priceDirection == true ? 'green' : 'red'"
+                            *ngIf="priceChangeValue24">
+                            {{priceChangeValue24}}/24hr
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-md-none pt-4">
+        <carousel [cellsToShow]="2" [height]="130" [dots]="true" [arrows]="false">
+            <ng-container>
+                <div class="carousel-cell">
+                    <div class="box py-1" style="height: 80px;">
+                        <h1 class="text_pink m-0">{{yetiMinted}}</h1>
+                        <small class="text-secondary m-0">YETI NFTs minted</small>
+                    </div>
+                </div>
+                <div class="carousel-cell">
+                    <div class="box py-1" style="height: 80px;">
+                        <h1 class="text_pink m-0">{{farmMinted}}</h1>
+                        <small class="text-secondary m-0">Farm NFTs minted</small>
+                    </div>
+                </div>
+                <div class="carousel-cell">
+                    <div class="box py-1" style="height: 80px;">
+                        <h1 class="text_pink m-0">soon</h1>
+                        <small class="text-secondary m-0">Unique holders</small>
+                    </div>
+                </div>
+                <div class="carousel-cell">
+                    <div class="box py-1" style="height: 80px;">
+                        <h1 class="text_pink m-0">${{frmdPrice | number: '1.1-4'}} </h1>
+                        <small class="text-secondary m-0" [ngClass]="priceDirection == true ? 'green' : 'red'"
+                            *ngIf="priceChangeValue24">
+                            {{priceChangeValue24}}/24hr
+                        </small>
+                    </div>
+                </div>
+            </ng-container>
+        </carousel>
+    </div>
+
+    <!-- marquee -->
+    <div class="row">
+        <div class="col-12 p-0 position-relative mt-20vh">
+            <div class="marquee" style="bottom: 0;">
+                <div class="marquee__inner fw-bolder reverse" aria-hidden="true">
+                    <img src="assets/images/club_img_copy.png" class="marquee-img">
+                    <img src="assets/images/club_img_copy.png" class="marquee-img">
+                    <img src="assets/images/club_img_copy.png" class="marquee-img">
+                    <img src="assets/images/club_img_copy.png" class="marquee-img">
+                </div>
+            </div>
+            <div class="marquee position-absolute" style="top:0; width: -webkit-fill-available;">
+                <div class="marquee__inner text-white fw-bolder" aria-hidden="true"
+                    style="font-size: 28vh; font-weight: 800 !important; text-shadow: -1px -1px 0 #FF54C7, 1px -1px 0 #FF54C7, -1px 1px 0 #FF54C7, 1px 1px 0 #FF54C7, 0 10px 17px rgba(255, 84, 199, 0.5)">
+                    <span class="marquee-text inter-extra-bold">Yeti Strong Club</span>
+                    <span class="marquee-text inter-extra-bold">Yeti Strong Club</span>
+                    <span class="marquee-text inter-extra-bold">Yeti Strong Club</span>
+                    <span class="marquee-text inter-extra-bold">Yeti Strong Club</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="position-absolute sm_circle d-block d-md-none" style=" top: 15%; right: 0; z-index: 1;"></div>
+    <div class="row ">
+        <div class="col-md-10 mx-auto mt-15vh">
+            <div class="row justify-content-between position-relative">
+                <div class="col-md-6 md_tc tribe-text-size">
+                    <span class="text_pink fw-bold">TRIBES COLLECTION</span>
+                    <h1 class="text-white wrap-text mb-0 fw-bold">Discover the Yeti</h1>
+                    <h1 class="text-white wrap-text mt-0 fw-bold">Strong Club Collection</h1>
+                    <div class="text-secondary">
+                        <small class="poppins">Uncover the true nature of the Yeti tribes, legendary creatures
+                            inhabiting
+                            the treacherous Yeti mountain ranges. Contrary to the belief that they were
+                            simply mindless wanderers, these resourceful beings have been on a mission from
+                            the beginning, gathering essential equipment left behind by adventurers to
+                            ultimately
+                            build their own crypto farms.
+                        </small>
+                    </div>
+                    <button class="btn btn_pink my-4 " routerLink="/mint">Mint now</button>
+                </div>
+                <div class="col-md-5 md_tc ">
+                    <img src="assets/images/discover_images.svg" class="w-100">
+
+                </div>
+                <!-- background circle  -->
+                <div class="position-absolute blurry-circle d-none d-md-block" style="right: -10vh; top: -20vh;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="position-absolute sm_circle d-block d-md-none" style=" top: 23%; left: 0; z-index: 1;"></div>
+    <div class="d-none d-md-flex gap-3">
+        <div class="row">
+            <div class="col-10 mx-auto mt-5vh">
+                <div class="row">
+                    <ng-container *ngFor="let i of yeti">
+                        <div class="col-3">
+                            <div class="text-center pink_dotted_border pink-boxes h-100" style="padding: 1vw;">
+                                <img src="{{i.img}}" style="height: 10vw;">
+                                <h3 class="text_pink fw-bold">{{i.title}}</h3>
+                                <small class="text-secondary fw-0 mt-2vh poppins-medium">{{i.detail}}</small>
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-md-none mt-10vh">
+        <carousel [cellsToShow]="1.2" [height]="325" [cellWidth]="150" [dots]="true" [arrows]="false">
+            <ng-container *ngFor="let i of yeti">
+                <div class="carousel-cell">
+                    <div class="text-center pink_dotted_border pink-boxes rounded-4 px-3 pb-3">
+                        <img src="{{i.img}}">
+                        <h3 class="text_pink fw-bold">{{i.title}}</h3>
+                        <small class="text-secondary fw-0 mt-2">{{i.detail}}</small>
+                    </div>
+                </div>
+            </ng-container>
+        </carousel>
+    </div>
+
+    <div class="row position-relative">
+        <div class="col-md-5 crypto-text mx-auto text-center mt-15vh ">
+            <h6 class="text_pink uppercase inter-bold">crypto farms</h6>
+            <h2 class="text-white gamified-text inter-bold">A Gamified Staking Experience</h2>
+            <span class="text-secondary poppins-medium">Immerse yourself in the gamified world of NFT staking with our
+                Crypto Farms
+                expansion. Stake your Yeti in the Farms to unlock new earning opportunities and strategize your way to
+                success!</span>
+        </div>
+        <div class="position-absolute blurry-circle d-none d-md-block" style="left: 0; top: 0;"></div>
+    </div>
+    <!-- back ground circle  -->
+    <div class="position-absolute sm_circle d-block d-md-none" style=" top: 40%; right: 0; z-index: 1;"></div>
+    <div class="row">
+        <div class="col-md-10 col-11 mx-auto rounded-4 pink_dotted_border mt-15vh">
+            <div class="row align-items-center">
+                <div class="col-md-5 d-flex align-items-center epic-text pt-small-4 ">
+                    <div style="padding: 2vw;">
+                        <h4 class="inter-bold text-white">Epic - Cloud Nine Farms</h4>
+                        <small class="text-secondary poppins-medium">Situated on a cloud high above the mountain ranges,
+                            the
+                            Cloud Nine
+                            Farm
+                            features a spacious Yeti Hut designed to accommodate 4 Yeti workers, a power source, and
+                            a
+                            mining rig. <div><br></div>
+                            Residing at the summit of the unclimbable Cloud Peak, Cloud Yeti are able to maintain
+                            their
+                            secrecy, far from the reach of curious onlookers, while they conquer the clouds. As an
+                            epic
+                            farm type, only 400 of these farms will ever exist. The unique location of the Cloud
+                            Nine
+                            Farm promotes an exceptional synergy with the enigmatic Cloud Yeti, resulting in a 10%
+                            farming boost when upgraded level 10.</small>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <img src="assets/images/cloud_9.png" class="w-100 cloud9" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10 col-11 mx-auto rounded-4 pink_dotted_border mt-15vh">
+            <div class="row">
+                <div class="col-md-7 d-none d-md-block p-0">
+                    <img src="assets/images/arctic_glacier.png" class="w-100 arctic-glacier">
+                </div>
+                <div class="col-md-5 d-flex align-items-center rare-text pt-small-4">
+                    <div style="padding: 2vw;">
+                        <h4 class="inter-bold text-white">Rare - Arctic Glacier Farms</h4>
+                        <small class="text-secondary poppins-medium">Nestled within a pristine glacier on Ice Peak, the
+                            Arctic Glacier
+                            Farm
+                            features a comfortable Yeti Hut built to house 3 Yeti workers, a power source, and a mining
+                            rig,
+                            <br> <br>
+
+                            As a rare farm type, only 1200 of these farms will ever exist. These farms synergize with
+                            the
+                            hospitable Ice Yetis, unlocking a 7.5% farming boost at level 8.</small>
+                    </div>
+                </div>
+                <div class="col-md-7 d-block d-md-none p-0">
+                    <img src="assets/images/arctic_glacier.png" class="img-fluid arctic-glacier">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row position-relative">
+        <div class="col-md-10 col-11 mx-auto rounded-4 pink_dotted_border mt-15vh">
+            <div class="row">
+                <div class="col-md-5 frosty-text d-flex align-items-center pt-small-4">
+                    <div style="padding: 2vw;">
+                        <h4 class="text-white inter-bold">Common - Frosty Peak Farms</h4>
+                        <small class="text-secondary poppins-medium">Amidst the snow-capped peaks of the Yeti mountain
+                            ranges, the
+                            Frosty
+                            Peak
+                            Farm contains a snug Yeti Hut designed for 2 Yeti workers, a power source, and a mining
+                            rig.
+                            <div><br></div>
+
+                            As the most common farm type, 2400 of these farms exist. The Frosty Peak Farm creates
+                            the
+                            ideal synergy with Snow Yeti, enabling a 5% farming boost at level 5.
+                        </small>
+                    </div>
+                </div>
+                <div class="col-md-7 p-0">
+                    <img src="assets/images/frosty_peak.png" class="w-100 frosty-peak">
+                </div>
+            </div>
+        </div>
+        <div class="position-absolute blurry-circle d-none d-md-block" style="right: 0; top: 0;"></div>
+    </div>
+    <div class="row position-relative">
+        <div class="col-md-8 text mx-auto text-center mt-15vh">
+            <h3 class="text-white inter-bold m-0">Amplify your $FRMD earnings by upgrading the farms, and discovering synergies between farm levels and Yeti tribes.Maximize your passive income potential!</h3>
+            <div class="mt-5vh">
+                <button class="btn btn_pink ps-5 pe-5 p-2" routerLink="/mint">Mint now</button>
+            </div>
+        </div>
+        <!-- back gorund icon  -->
+        <div class="col-12 position-relative">
+            <div class="position-absolute d-none d-md-block" style="top: -10vh;">
+                <img src="assets/images/bg_icon2.png" style="height: 13vw;" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="position-absolute sm_circle d-block d-md-none" style=" top: 63%; left: 0; z-index: 1;"></div>
+    <div class="position-absolute sm_circle d-block d-md-none" style=" top: 71%; right: 0; z-index: 1;"></div>
+    <div class="position-absolute sm_circle d-block d-md-none" style=" top: 81%;  z-index: 1;"></div>
+    <div class="row mt-5vh">
+        <div class="col-md-8 frmd-text mx-auto text-center">
+            <h6 class="text_pink inter-bold">$FRMD</h6>
+            <div class="col-md-7 eco-text mx-auto text-center">
+                <h1 class="text-white inter-extra-bold">An Ecosystem</h1>
+                <h1 class="text-white inter-extra-bold">Token Fueling ArtFi</h1>
+            </div>
+            <div class="col-md-7 mx-auto text-secondary mt-2vh">
+                <small class="poppins-medium">$FRMD is a versatile ecosystem token that powers ArtFi, a unique
+                    framework
+                    developed by FRĀMD to connect multiple projects for a shared, thriving economy. The YTSC is
+                    the only collection to passively mine $FRMD.</small>
+            </div>
+        </div>
+    </div>
+    <div class="row position-relative">
+        <!-- background circle  -->
+        <div class="position-absolute blurry-circle d-none d-md-block" style="left: 0; top: 0;"></div>
+        <div class="col-md-10 mx-auto mt-5vh">
+            <div class="row justify-content-between">
+                <div class="col-md-5 md_tc ">
+                    <div class=" col-12 rounded-4  position-relative mb-4 d-block d-md-none"
+                        style="border: 2px dotted #FF54C7; padding: 2vw;">
+                        <div class="row align-items-center">
+                            <div class="col-6">
+                                <h6 class="text_pink" style="font-size: 4vw;">FRMD/sICX</h6>
+                            </div>
+                            <div class="col-6">
+                                <div class="dropdown">
+                                    <a class="btn btn-secondary rounded-3 text-white p-2 ps-2 pe-2 dropdown-toggle fs_1vw"
+                                        style="background-color: transparent;border: 1px solid #FF54C740;"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false" selected >
+                                        {{ selectedOption }}
+                                    </a>
+                                    <ul class="dropdown-menu text-white"
+                                        style="background-color: #151515F2; border: 1px solid #FF54C740;">
+                                        <li><a class="dropdown-item text-white" *ngFor="let btn of chartFilterButtons, let i = index" (click)="filterChartData(btn.time, btn.value, btn.cValue, i, btn.bStart)" (click)="selectOption(btn.display)">{{btn.display}}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <app-chart [chartData]="chartData"></app-chart>
+                        </div>
+                    </div>
+                    <div class="text-white stats-text">
+                        <h5 class="m-0 fw-bold">$FRMD Statistics</h5>
+                        <small class="text-secondary">Stats are updated every 5 minutes</small>
+                    </div>
+                    <div class="row mt-5vh">
+                        <div class="col-md-12 col-10 mx-auto d-flex justify-content-between position-relative">
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-baseline gap-2">
+                                    <img src="assets/images/pink_dot.png" class="h3vh">
+                                    <div class="stats-text">
+                                        <h5 class="text_pink my-auto">100,000,00</h5>
+                                        <small class="text-secondary">Market cap</small>
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-2 my-4">
+                                    <img src="assets/images/pink_dot.png" class="h3vh">
+                                    <div class="stats-text">
+                                        <h5 class="text_pink my-auto text-start">1.75%</h5>
+                                        <small class="text-secondary">24H price change</small>
+                                    </div>
+                                </div>
+                                <div class="mt-5 d-none d-md-block">
+                                    <a href="https://app.balanced.network/trade" target="_blank"><button
+                                            class="btn btn_pink">Buy / Sell
+                                            $FRMD</button></a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-baseline gap-2">
+                                    <img src="assets/images/pink_dot.png" class="h3vh">
+                                    <div class="stats-text">
+                                        <h5 class="text_pink my-auto text-start">100K</h5>
+                                        <small class="text-secondary">Total volume</small>
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-2 my-4">
+                                    <img src="assets/images/pink_dot.png" class="h3vh">
+                                    <div class="stats-text">
+                                        <h5 class="text_pink my-auto">2,578</h5>
+                                        <small class="text-secondary">Holders</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 mx-auto d-block d-md-none">
+                            <button class="btn btn_pink w-100 fw-bold" target="_blank">Buy / Sell
+                                $FRMD</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6  text-secondary d-none d-md-block"
+                    style="border: 2px dotted #FF54C7; border-radius: 1vw; padding: .8vw;">
+                    <div class=" col-12 justify-content-between d-flex mt-2vh" style="padding: 1vw;">
+                        <div class="usd-text">
+                            <h6 class="text_pink inter-bold">FRMD/sICX</h6>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 d-flex">
+                                <div style="padding-right: .6vw;" *ngFor="let btn of chartFilterButtons, let i = index">
+                                    <button 
+                                        class="btn btn-outline-pink text-white {{i == selectedFilter ? 'selected' : ''}}"
+                                        (click)="filterChartData(btn.time, btn.value, btn.cValue, i, btn.bStart)">{{btn.display}}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <app-chart [chartData]="chartData"></app-chart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row position-relative" style="margin-bottom: 15vh;">
+                <!-- background circle  -->
+                <div class="position-absolute blurry-circle d-none d-md-block" style="right: -15vh; bottom: -50vh;">
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-md-4 col-12 token-text mbl_center mt-5">
+                            <h5 class="mb-2 inter-bold text-white">Token Distribution</h5>
+                            <small class="text-secondary poppins-medium">$FRMD can be earned through YTSC farming,
+                                voting
+                                for
+                                the
+                                FRĀMD Node,
+                                minting Art-Fi Ecosystem NFTs, or directly purchasing the token via
+                                Balanced.</small>
+                            <div class=" mx-auto mt-4 d-none d-md-block">
+                                <a href="https://docs.framd.art"> <button class="btn btn_pink ">Learn more</button> </a>
+                            </div>
+                            <div class="col-md-5 col-8 mx-auto mt-4 d-block d-md-none">
+                                <a href="https://docs.framd.art"> <button class="btn btn_pink w-100">Learn more</button>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-8 mt-5vh position-relative">
+                            <div class="progress-text">
+                                <h4 class="text-white inter-bold">Total Supply (32,000,000)</h4>
+                                <div class="progress rounded-4 h-25 position-relative" style="padding: 2vh;">
+                                    <div class="position-absolute pink_dotts"
+                                        style="border-bottom: .5vw dotted #974E80;width: 93%;height: 32%; margin-left: 1vw; margin-top: -.5vh;">
+                                    </div>
+                                    <div class="progress-bar position-absolute rounded-4 text-end pe-2 "
+                                        role="progressbar" aria-label="Example with label"
+                                        [style.width.%]="progressBar1"
+                                        style="font-weight: 600; background-color: #FF54C7; padding: .5vh; top: 0; left: 0;"
+                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{progressBar1}}%</div>
+                                </div>
+                            </div>
+                            <div class="mt-5vh progress-text">
+                                <h4 class="text-white inter-bold">Circulating Supply ({{circulatingSupply | number:
+                                    '1.1-2'}})</h4>
+                                <div class="progress rounded-4 h-25 position-relative" style="padding: 2vh;">
+                                    <div class="position-absolute pink_dotts"
+                                        style="border-bottom: .5vw dotted #974E80;width: 93%;height: 32%; margin-left: 1vw; margin-top: -.5vh;">
+                                    </div>
+                                    <div class="progress-bar position-absolute rounded-4 text-end pe-2"
+                                        role="progressbar" aria-label="Example with label"
+                                        [style.width.%]="circulatingSupplyProgress"
+                                        style="font-weight: 600; background-color: #D238A0; padding: .5vh; top: 0; left: 0;"
+                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                        {{circulatingSupplyProgress
+                                        | number: '1.1-2'}}%
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-5vh progress-text">
+                                <h4 class="text-white inter-bold">Total Staked ({{totalStaked | number: '1.1-2'}})</h4>
+                                <div class="progress rounded-4 h-25 position-relative" style="padding: 2vh;">
+                                    <div class="position-absolute pink_dotts"
+                                        style="border-bottom: .5vw dotted #974E80;width: 93%;height: 32%; margin-left: 1vw; margin-top: -.6vh;">
+                                    </div>
+                                    <div class="progress-bar position-absolute rounded-4 text-end pe-2"
+                                        role="progressbar" aria-label="Example with label"
+                                        [style.width.%]="stakedProgress"
+                                        style="font-weight: 600; background-color: #A7257D; padding: .5vh; top: 0; left: 0;"
+                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{stakedProgress |
+                                        number:
+                                        '1.1-2'}}%</div>
+                                </div>
+                            </div>
+                            <div class="mt-5vh progress-text">
+                                <h4 class=" text-white inter-bold">Locked Supply ({{frmdLockedSupply | number:
+                                    '1.1-2'}})
+                                </h4>
+                                <div class="progress rounded-4 h-25 position-relative" style="padding: 2vh;">
+                                    <div class="position-absolute pink_dotts"
+                                        style="border-bottom: .5vw dotted #974E80;width: 93%;height: 32%; margin-left: 1vw; margin-top: -.6vh;">
+                                    </div>
+                                    <div class="progress-bar position-absolute rounded-4" role="progressbar"
+                                        aria-label="Example with label" [style.width.%]="frmdLockedProgress"
+                                        style="font-weight: 600; background-color: #9b2475 ;padding: .5vh; top: 0; left: 0;"
+                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{frmdLockedProgress |
+                                        number: '1.1-2'}}%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- back ground circle  -->
+<!-- <div class="position-absolute blurry-circle d-none d-md-block" style="right: 0px; bottom: 220px;"></div>
+<div class="position-absolute blurry-circle bg_circle_5 d-none d-md-block" style="right: 0px; bottom: 38%;"></div> -->
+
+
+<!-- back ground circle  -->
+<!-- <div class="position-absolute blurry-circle bg_circle_1" style="right: 0; top: 20%; z-index: -1;"></div>
+<div class="position-absolute blurry-circle bg_circle_2" style="top: 35%;"></div> -->

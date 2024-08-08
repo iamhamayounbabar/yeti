@@ -1,0 +1,51 @@
+<div class="position-relative">
+    <!--<button (click)="toggleDropdown()" class="btn btn-outline text-white text_s_13 rounded-5 d-none d-lg-flex" style="border: 1px solid #FF54C740; cursor: not-allowed;">
+        <img src="assets/images/filter_icon.png" class="me-2" height="20" alt="">
+        Filters
+    </button> -->
+    <button class="btn btn-outline text-white d-none d-lg-flex poppins-medium" style="border-radius: 2vw; border: 1px solid #FF54C740; cursor: not-allowed; font-size: 1vw;">
+        <img src="assets/images/filter_icon.png" style="height: 3vh;">
+        Filters
+    </button>
+
+    <!--<img (click)="toggleDropdown()" src="assets/images/filter_sm.svg" class="d-block d-lg-none pointer" alt=""> -->
+
+    <div *ngIf="showDropdown" class="position-absolute filter py-3">
+        <div class="header d-flex align-items-center justify-content-between px-3 pb-2">
+            <div class="d-flex align-items-center">
+                <img src="assets/images/filter_icon.png" alt="">
+                <h6 class="text-white ps-2 m-0 inter-bold">FILTERS</h6>
+            </div>
+            <i class="bi bi-x fs-4 text_pink pointer" (click)="toggleDropdown()" ></i>
+        </div>
+        <div class="chips d-flex flex-wrap gap-2 py-2 px-3" *ngIf="filteredItems.length > 0">
+            <div class="d-flex justify-content-between align-items-center px-2" *ngFor="let selected of filteredItems">
+                <span class="text-white poppins-semi-bold">{{selected}}</span>
+                <i class="bi bi-x fs-5 text-white pointer" (click)="addRemoveFilter(selected)"></i>
+            </div>
+        </div>
+        <div class="accordion mt-2 px-3">
+            <div class="accordion-item bg-transparent border-0" *ngFor="let filter of filterItems; let i = index;">
+              <h2 class="accordion-header inter-semi-bold">
+                <button class="accordion-button p-2 text-white bg-transparent" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#a' + i" aria-expanded="true" [attr.aria-controls]="'a' + i">
+                  {{filter.category}}
+                </button>
+              </h2>
+              <div id="a{{i}}" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body py-0">
+                    <ul class="list-unstyled text-white">
+                        <li *ngFor="let fil of filter.filters; let j = index">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="{{filter.category}}{{j}}" (click)="addRemoveFilter(fil)" [checked]="filteredItems.includes(fil)">
+                                <label class="form-check-label poppins-medium" htmlFor="{{filter.category}}{{j}}">
+                                    {{fil}}
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>

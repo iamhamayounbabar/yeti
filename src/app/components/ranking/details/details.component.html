@@ -1,0 +1,79 @@
+<div class="row pt-2">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-md-4 my-2">
+                <div class="rounded-3 p-2" style="border: 1px solid #FF54C726; background-color: #1515154f;">
+                    <div>
+                        <h6 class="m-0 text_s_10 text-secondary">Collection</h6>
+                    </div>
+                    <div class="mt-2">
+                        <span class="text_pink text_s_15">Yeti Strong Club</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 my-2">
+                <div class=" rounded-3 p-2 " style="border: 1px solid #FF54C726; background-color: #1515154f;">
+                    <div>
+                        <h6 class="m-0 text_s_10 text-secondary">Owner</h6>
+                    </div>
+                    <div class="mt-2 d-flex justify-content-between">
+                        <div>
+                            <span class="text_pink text_s_15">hxfkkdodsppdfs3p3ik32pinpnpip3323</span>
+                        </div>
+                        <div>
+                            <img src="assets/images/copy_icon.png" class="pointer" height="13" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 my-3">
+                <span class="">History</span>
+                <div class="col-md-12 rounded-3 p-2 mt-3" *ngFor="let data of history"
+                    style="border: 1px solid #FF54C726; background-color: #1515154f;">
+                    <div class="row">
+                        <div class="col-1 my-auto">
+                            <img src="{{data.img}}" height="40" width="40" class="rounded-circle border" alt="">
+                        </div>
+                        <div class="col-9 my-auto ms-2">
+                            <div class="row justify-content-between">
+                                <div class="col-4">
+                                    <span class="text_pink ms-3 me-3 text_s_15">{{data.id}}</span>
+                                </div>
+                                <div class="col-md-8">
+                                    <span class="ms-3 text_s_10">{{data.detail}}</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-1">
+                            <h5 class="fs1_7vw pointer">{{data.icon}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 my-1_5vw">
+                <span class="">Active offers</span>
+                <div class="row">
+                    <div style="font-size: 1.7vh;" class="p_vw5 col-md-8 col-7 justify-content-between d-flex">
+                        <div>
+                            <span class="text-secondary">Offered Price</span>
+                        </div>
+                        <div>
+                            <span class="text-secondary">Offered By</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 br p_vw5" *ngFor="let data of offers"
+                    style="border: 1px solid #FF54C726;margin-bottom: 1vw;">
+                    <div class="d-flex align-items-center p_vw5 justify-content-between">
+                        <span class="text_pink ">{{data.price}}</span>
+                        <span class="">{{data.offerby}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

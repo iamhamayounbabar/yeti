@@ -1,0 +1,42 @@
+h5{
+    font-size: 1.3vw;
+}
+
+@media (width < 600px) {
+    .footer-info{
+        flex-flow: column-reverse;
+    } 
+
+    h5{
+        font-size: 4vw;
+    }
+    .small-screen{
+        height: 8vh !important;
+    }
+    .center{
+        text-align: center;
+    }
+    .mt-15vh{
+        margin-top: 0 !important;
+    }
+
+    .community-text h2{
+        font-size: 6vw !important;
+    }
+
+    .sm-mt-mb{
+        margin-top: 3vh !important;
+        margin-bottom: 3vh !important;
+    }
+    small{
+        font-size: 3vw !important;
+    }
+}
+
+small{
+    font-size: .9vw;
+}
+
+.community-text h2{
+    font-size: 2.5vw;
+}

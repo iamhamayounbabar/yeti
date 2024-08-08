@@ -1,0 +1,142 @@
+.btn:hover {
+  background-color: #FF54C7;
+}
+
+.toggle-switch {
+  display: inline-block;
+}
+
+h4 {
+  font-size: 3.7vh !important;
+}
+
+
+.box {
+  z-index: 1;
+  box-shadow: 0px 25px 50px rgba(255, 84, 199, 0.25);
+  border: 1px solid #FF54C726;
+  background-color: #151515;
+  padding: 1vw;
+  border-radius: 1vw;
+  width: 27vw;
+}
+
+.h_5vh {
+  height: 5vh;
+}
+
+.h_3vh {
+  height: 5vh;
+  padding: 1.5vh;
+  padding-left: 1.2vw;
+  padding-right: 1.2vw;
+}
+
+small {
+  font-size: .9vw;
+}
+
+@media (width > 600px) {
+  .h26vh {
+    height: 12vw;
+  }
+}
+
+@media (width < 450px) {
+  .box {
+    width: 90vw;
+  }
+
+  h4 {
+    font-size: 5.5vw !important;
+  }
+
+  small {
+    font-size: 2.9vw !important;
+  }
+
+  .gap2_7 {
+    gap: 2.7vw !important;
+  }
+
+  .p1_6 {
+    padding: 1.6vw !important;
+    border-radius: 1.6vw !important;
+  }
+
+  .br_6vw {
+    border-radius: 6vw !important;
+  }
+
+  .sm_btn {
+    font-size: 3vw !important;
+    border-radius: 6vw !important;
+  }
+
+  .padding_bottom_sm {
+    padding-bottom: 0 !important;
+}
+
+  .toggle-switch_sm_width {
+    width: 80vw !important;
+    border-radius: 4vw !important;
+  }
+
+  .box {
+    border-radius: 3vw !important;
+    padding: 4vw !important;
+  }
+
+  .h_5vh {
+    height: 5vh;
+    border-radius: 4vw !important;
+  }
+
+  .h_3vh {
+    height: 4.5vh;
+    padding: 1vh !important;
+    padding-left: 2.5vh !important;
+    padding-right: 2.5vh !important;
+    border-radius: 4vw !important;
+  }
+}
+
+@media (width > 1080px){
+  .footer_shadow {
+    background: rgb(22, 22, 22) !important;
+    background: linear-gradient(0deg, rgba(22, 22, 22, 0.7553396358543417) 0%, rgba(0, 0, 0, 0.7441351540616247) 21%, rgba(11, 11, 11, 0.39399509803921573) 92%, rgba(12, 12, 12, 0.02984943977591037) 100%) !important;
+    width: 100% !important;
+    height: 64vh;
+    bottom: -16vh;
+    left: 0;
+    z-index: -1 !important;
+}
+}
+
+@media (width < 1518px) {
+  .mb_footer {
+    bottom: calc((-27vw) + 18.4vw) !important;
+  }
+
+
+}
+
+.blur-circle1 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  right: 0;
+  top: 0;
+  background: rgba(255, 84, 199, 0.5);
+  filter: blur(160px);
+}
+
+.blur-circle2 {
+  position: absolute;
+  width: 400px;
+  height: 500px;
+  left: 0;
+  top: 17rem;
+  background: rgba(255, 84, 199, 0.5);
+  filter: blur(140px);
+}

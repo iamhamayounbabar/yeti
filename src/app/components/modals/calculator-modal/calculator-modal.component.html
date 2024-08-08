@@ -1,0 +1,371 @@
+<div class="d-none d-md-block">
+    <img src="assets/images/calc_icon.png" class="pointer" style="height: 6vh;" alt="" data-bs-toggle="modal"
+        data-bs-target="#calculator-modal1">
+</div>
+<div class="d-block d-md-none">
+    <img src="assets/images/calc_icon.png" class="pointer" style="height: 6vh;" alt="" data-bs-toggle="modal"
+        data-bs-target="#calculator-modal2">
+</div>
+
+<div class="d-none d-md-block">
+    <div class="modal fade" id="calculator-modal1" tabindex="-1" aria-labelledby="calculator-modalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-white"
+                style=" width: 37vw !important; padding: 1vw !important; border: 2px solid #FF54C780; background: #151515; z-index: 1; border-radius: 1vw;">
+                <div class="modal-header border-0" style="padding: 1vw;">
+                    <h5 class="modal-title" id="calculator-modalLabel">HANDY FARM CALCULATOR</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <hr class="m-0">
+                <div class="modal-body" style="padding: 1vw;">
+                    <!-- back ground circle  -->
+                    <div class="position-absolute sm_circle" style="top: -10vh; left:6vw; z-index: -1;">
+                    </div>
+                    <div class="mx-auto mt-2vh">
+                        <select class="form-select" aria-label="Default select example"
+                            style="background-color: #151515; padding: .8vw; border-radius: .6vw; width: 32.5vw;">
+                            <option selected>Farm type</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        <div class="mt-2vh d-flex">
+                            <div style="padding-right: .3vw;">
+                                <select class="form-select" aria-label="Default select example"
+                                    style="background-color: #151515; padding: .8vw; border-radius: .6vw; width: 16vw;">
+                                    <option selected>Upgrade from</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                            <div style="padding-left: .3vw;">
+                                <select class="form-select" aria-label="Default select example"
+                                    style="background-color: #151515;padding: .8vw; border-radius: .6vw; width: 16vw;">
+                                    <option selected>Upgrade to</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-7 text-center mx-auto mt-2vh">
+                                <h6 class="text_pink">SELECT WORKERS’ TRIBE</h6>
+                            </div>
+                        </div>
+                        <div class="row mt-2vh">
+                            <div class="col-3 pointer position-relative">
+                                <div class="text-center sm_padding" [ngStyle]="getDivStyle(select === 0)"
+                                    [class.selected]="select === 0"
+                                    style="background-color: #151515; height: 12vh; border-radius: .7vw; padding: 1vw;"
+                                    (click)="click(0)">
+                                    <img [src]="selectedImage1" class="img-fluid">
+                                </div>
+                            </div>
+                            <div *ngIf="showDiv == 0 && hideDiv" class="col-3 position-absolute"
+                                style="background-color:#151515; top: 41vh; border-radius: .7vw; border: 1px dashed #FF54C7 !important; padding: 1vw; left: 1vw; z-index: 9999;">
+                                <div class="pointer pointer-hover rounded-3" (click)="selectIconBox1(0)">
+                                    <img src="assets/images/cloud_emoji.svg" class="img-fluid"> <span
+                                        style="margin-left: 1vw;">Cloud</span>
+                                </div>
+                                <div class="pointer pointer-hover rounded-3 my2 " (click)="selectIconBox1(1)">
+                                    <img src="assets/images/ice_emoji.svg" class="img-fluid"> <span style="margin-left: 1vw;">Ice</span>
+                                </div>
+                                <div class="pointer pointer-hover rounded-3" (click)="selectIconBox1(2)">
+                                    <img src="assets/images/snow_emoji.svg" class="img-fluid"> <span style="margin-left: 1vw;">Snow</span>
+                                </div>
+                                <div class="pointer pointer-hover rounded-3 mt-2" (click)="selectIconBox1(3)">
+                                    <img src="assets/images/water_emoji.svg" class="img-fluid"> <span
+                                        style="margin-left: 1vw;">Water</span>
+                                </div>
+                            </div>
+
+                            <div class="col-3 pointer position-relative">
+                                <div class="text-center " [ngStyle]="getDivStyle(select === 1)"
+                                    [class.selected]="select === 1"
+                                    style="background-color: #151515; height: 12vh; border-radius: .7vw; border: 1px dashed #FF54C7 !important; padding: 1vw;"
+                                    (click)="click(1)">
+                                    <img [src]="selectedImage2" style="height: 4vh;">
+                                </div>
+                            </div>
+                            <div *ngIf="showDiv == 1 && hideDiv" class="col-3 p-2 rounded-3 position-absolute" style="background-color:#151515; top: 41vh;
+                                z-index: 9999; left: 10vw;">
+                                <div class="pointer pointer-hover rounded-3" (click)="selectIconBox2(0)">
+                                    <img src="assets/images/cloud_emoji.svg" style="height: 4vh;"> <span
+                                        style="margin-left: 1vw;">Cloud</span>
+                                </div>
+                                <div class="pointer pointer-hover rounded-3 my2" (click)="selectIconBox2(1)">
+                                    <img src="assets/images/ice_emoji.svg" style="height: 4vh;"> <span style="margin-left: 1vw;">Ice</span>
+                                </div>
+                                <div class="pointer pointer-hover rounded-3" (click)="selectIconBox2(2)">
+                                    <img src="assets/images/snow_emoji.svg" style="height: 4vh;"> <span style="margin-left: 1vw;">Snow</span>
+                                </div>
+                                <div class="pointer pointer-hover rounded-3 mt-2" (click)="selectIconBox2(3)">
+                                    <img src="assets/images/water_emoji.svg" style="height: 4vh;"> <span
+                                        style="margin-left: 1vw;">Water</span>
+                                </div>
+                            </div>
+
+                            <div class="col-3 pointer position-relative">
+                                <div class="text-center" [ngStyle]="getDivStyle(select === 2)"
+                                    [class.selected]="select === 2"
+                                    style="background-color: #151515; height: 12vh; border-radius: .7vw; border: 1px dashed #FF54C7 !important; padding: 1vw;"
+                                    (click)="click(2)">
+                                    <img [src]="selectedImage3" class="img-fluid">
+                                </div>
+                            </div>
+                            <div *ngIf="showDiv == 2 && hideDiv" class="col-3 p-2 rounded-3 position-absolute"
+                                style="background-color:#151515; top: 41vh; right: 8vw; z-index: 9999;">
+                                <div class="pointer pointer-hover rounded-3" (click)="selectIconBox3(0)">
+                                    <img src="assets/images/cloud_emoji.svg" height="35"> <span
+                                        style="margin-left: 1vw;">Cloud</span>
+                                </div>
+                                <div class="pointer pointer-hover rounded-3 my2" (click)="selectIconBox3(1)">
+                                    <img src="assets/images/ice_emoji.svg" height="35"> <span style="margin-left: 1vw;">Ice</span>
+                                </div>
+                                <div class="pointer pointer-hover rounded-3" (click)="selectIconBox3(2)">
+                                    <img src="assets/images/snow_emoji.svg" height="35"> <span style="margin-left: 1vw;">Snow</span>
+                                </div>
+                                <div class="pointer pointer-hover rounded-3 mt-2" (click)="selectIconBox3(3)">
+                                    <img src="assets/images/water_emoji.svg" height="35"> <span
+                                        style="margin-left: 1vw;">Water</span>
+                                </div>
+                            </div>
+
+                            <div class="col-3 pointer position-relative">
+                                <div class="text-center" [ngStyle]="getDivStyle(select === 3)"
+                                    [class.selected]="select === 3"
+                                    style="background-color: #151515; height: 12vh; border-radius: .7vw; border: 1px dashed #FF54C7 !important; padding: 1vw;"
+                                    (click)="click(3)">
+                                    <img [src]="selectedImage4" class="img-fluid">
+                                </div>
+                            </div>
+                            <div *ngIf="showDiv == 3 && hideDiv" class="col-3 p-2 rounded-3 position-absolute"
+                                style="background-color:#151515; top: 41vh; right: 1vw; z-index: 9999;">
+                                <div class="pointer pointer-hover rounded-3" (click)="selectIconBox4(0)">
+                                    <img src="assets/images/cloud_emoji.svg" height="35"> <span
+                                        style="margin-left: 1vw;">Cloud</span>
+                                </div>
+                                <div class="pointer pointer-hover rounded-3 my2" (click)="selectIconBox4(1)">
+                                    <img src="assets/images/ice_emoji.svg" height="35"> <span style="margin-left: 1vw;">Ice</span>
+                                </div>
+                                <div class="pointer pointer-hover rounded-3" (click)="selectIconBox4(2)">
+                                    <img src="assets/images/snow_emoji.svg" height="35"> <span style="margin-left: 1vw;">Snow</span>
+                                </div>
+                                <div class="pointer pointer-hover rounded-3 mt-2" (click)="selectIconBox4(3)">
+                                    <img src="assets/images/water_emoji.svg" height="35"> <span
+                                        style="margin-left: 1vw;">Water</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5 mx-auto mt-5vh">
+                                <button class="btn btn_pink w-100"
+                                    style="font-size: 1vw; padding: .7vw;">Calculate</button>
+                            </div>
+                        </div>
+                        <div class="mx-auto justify-content-between position-relative d-flex align-items-center mt-5vh"
+                            style="border: 1px dashed #FF54C7;background-color: #151515; padding: .8vw; border-radius: .7vw; width: 32.5vw;">
+                            <span class="fw-bold">Daily yield</span>
+                            <span class="text_pink fs1_3vw fw-bold">2 $FRMD</span>
+                            <div class="position-absolute sm_circle" style="top: 0; left:8vw; z-index: -1;">
+                            </div>
+                        </div>
+                        <div class="mx-auto justify-content-between d-flex mt-2vh align-items-center"
+                            style="border: 1px dashed #FF54C7;background-color: #151515; padding: .8vw; border-radius: .7vw; width: 32.5vw;">
+                            <span class="fw-bold">Total cost </span>
+                            <span class="text_pink fs1_3vw fw-bold">300 $FRMD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="d-block d-md-none">
+    <div class="modal fade" id="calculator-modal2" tabindex="-1" aria-labelledby="calculator-modalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="modal-content text-white" style="background: #151515;
+            border: 2px solid rgba(255, 84, 199, 0.5);
+            ">
+                <div class="modal-header border-0 position-relative">
+                    <h5 class="modal-title" id="calculator-modalLabel" style="font-size: 4vw !important;">HANDY FARM CALCULATOR</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <!-- back ground circle  -->
+                    <div class="position-absolute sm_circle" style="top: 0; right: 25vw; z-index: 1;">
+                    </div>
+                </div>
+                <hr class="m-0">
+                <div class="modal-body">
+                    <div class="row p-4 pe-4">
+                        <div class="col-md-11 mx-auto">
+                            <select class="form-select p-2 rounded-3" aria-label="Default select example"
+                                style="background-color: #151515; font-size: 3vw !important;">
+                                <option selected>Farm type</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                            <div class="row">
+                                <div class="col-md-6 my-3">
+                                    <select class="form-select p-2 rounded-3" aria-label="Default select example"
+                                        style="background-color: #151515;font-size: 3vw !important;">
+                                        <option selected>Upgrade from</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mt-3">
+                                    <select class="form-select p-2 rounded-3" aria-label="Default select example"
+                                        style="background-color: #151515;font-size: 3vw !important;">
+                                        <option selected>Upgrade to</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-7 text-center mx-auto mt-3">
+                                    <h6 class="text_pink fs_1vw" style="font-size: 3vw !important;">SELECT WORKERS’ TRIBE</h6>
+                                </div>
+                            </div>
+                            <div class="row py-2">
+                                <div class="col-3 pointer position-relative">
+                                    <div class="text-center rounded-2 p-2 sm_padding"
+                                        [ngStyle]="getDivStyle(select === 0)" [class.selected]="select === 0"
+                                        style="background-color: #151515; height: 60px; width: 60px;" (click)="click(0)">
+                                        <img [src]="selectedImage1" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div *ngIf="showDiv == 0 && hideDiv" class="col-3 p-2 rounded-3 position-absolute"
+                                    style="background-color:#151515;border: 1px dashed #FF54C7 !important; top: 300px; left: 40px; z-index: 9999;">
+                                    <div class="pointer pointer-hover rounded-3" (click)="selectIconBox1(0)">
+                                        <img src="assets/images/cloud_emoji.svg" height="35"> <span
+                                            class="ms-2" style="font-size: 3vw !important;">Cloud</span>
+                                    </div>
+                                    <div class="pointer pointer-hover rounded-3 my2 " (click)="selectIconBox1(1)">
+                                        <img src="assets/images/ice_emoji.svg" height="35"> <span
+                                            class="ms-2"style="font-size: 3vw !important;">Ice</span>
+                                    </div>
+                                    <div class="pointer pointer-hover rounded-3" (click)="selectIconBox1(2)">
+                                        <img src="assets/images/snow_emoji.svg" height="35"> <span
+                                            class="ms-2"style="font-size: 3vw !important;">Snow</span>
+                                    </div>
+                                    <div class="pointer pointer-hover rounded-3 mt-2" (click)="selectIconBox1(3)">
+                                        <img src="assets/images/water_emoji.svg" height="35"> <span
+                                            class="ms-2"style="font-size: 3vw !important;">Water</span>
+                                    </div>
+                                </div>
+
+                                <div class="col-3 pointer position-relative">
+                                    <div class="text-center rounded-2 p-2" [ngStyle]="getDivStyle(select === 1)"
+                                        [class.selected]="select === 1" style="background-color: #151515; height: 60px; width: 60px;"
+                                        (click)="click(1)">
+                                        <img [src]="selectedImage2" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div *ngIf="showDiv == 1 && hideDiv" class="col-3 p-2 rounded-3 position-absolute"
+                                    style="background-color:#151515; border: 1px dashed #FF54C7 !important; top: 300px; z-index: 9999;left: 115px;">
+                                    <div class="pointer pointer-hover rounded-3" (click)="selectIconBox2(0)">
+                                        <img src="assets/images/cloud_emoji.svg" height="35"> <span
+                                            class="ms-2"style="font-size: 3vw !important;">Cloud</span>
+                                    </div>
+                                    <div class="pointer pointer-hover rounded-3 my2" (click)="selectIconBox2(1)">
+                                        <img src="assets/images/ice_emoji.svg" height="35"> <span
+                                            class="ms-2"style="font-size: 3vw !important;">Ice</span>
+                                    </div>
+                                    <div class="pointer pointer-hover rounded-3" (click)="selectIconBox2(2)">
+                                        <img src="assets/images/snow_emoji.svg" height="35"> <span
+                                            class="ms-2"style="font-size: 3vw !important;">Snow</span>
+                                    </div>
+                                    <div class="pointer pointer-hover rounded-3 mt-2" (click)="selectIconBox2(3)">
+                                        <img src="assets/images/water_emoji.svg" height="35"> <span
+                                            class="ms-2"style="font-size: 3vw !important;">Water</span>
+                                    </div>
+                                </div>
+
+                                <div class="col-3 pointer position-relative">
+                                    <div class="text-center rounded-2 p-2" [ngStyle]="getDivStyle(select === 2)"
+                                        [class.selected]="select === 2" style="background-color: #151515; height: 60px; width: 60px;"
+                                        (click)="click(2)">
+                                        <img [src]="selectedImage3" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div *ngIf="showDiv == 2 && hideDiv" class="col-3 p-2 rounded-3 position-absolute"
+                                    style="background-color:#151515;border: 1px dashed #FF54C7 !important; top: 300px; right: 75px; z-index: 9999;">
+                                    <div class="pointer pointer-hover rounded-3" (click)="selectIconBox3(0)">
+                                        <img src="assets/images/cloud_emoji.svg" height="35"> <span
+                                            class="ms-2"style="font-size: 3vw !important;">Cloud</span>
+                                    </div>
+                                    <div class="pointer pointer-hover rounded-3 my2" (click)="selectIconBox3(1)">
+                                        <img src="assets/images/ice_emoji.svg" height="35"> <span
+                                            class="ms-2"style="font-size: 3vw !important;">Ice</span>
+                                    </div>
+                                    <div class="pointer pointer-hover rounded-3" (click)="selectIconBox3(2)">
+                                        <img src="assets/images/snow_emoji.svg" height="35"> <span
+                                            class="ms-2"style="font-size: 3vw !important;">Snow</span>
+                                    </div>
+                                    <div class="pointer pointer-hover rounded-3 mt-2" (click)="selectIconBox3(3)">
+                                        <img src="assets/images/water_emoji.svg" height="35"> <span
+                                            class="ms-2"style="font-size: 3vw !important;">Water</span>
+                                    </div>
+                                </div>
+
+                                <div class="col-3 pointer position-relative">
+                                    <div class="text-center rounded-2 p-2" [ngStyle]="getDivStyle(select === 3)"
+                                        [class.selected]="select === 3" style="background-color: #151515; height: 60px; width: 60px;"
+                                        (click)="click(3)">
+                                        <img [src]="selectedImage4" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div *ngIf="showDiv == 3 && hideDiv" class="col-3 p-2 rounded-3 position-absolute"
+                                    style="background-color:#151515;border: 1px dashed #FF54C7 !important; top: 300px; right: 30px; z-index: 9999;">
+                                    <div class="pointer pointer-hover rounded-3" (click)="selectIconBox4(0)">
+                                        <img src="assets/images/cloud_emoji.svg" height="35"> <span
+                                            class="ms-2"style="font-size: 3vw !important;">Cloud</span>
+                                    </div>
+                                    <div class="pointer pointer-hover rounded-3 my2" (click)="selectIconBox4(1)">
+                                        <img src="assets/images/ice_emoji.svg" height="35"> <span
+                                            class="ms-2"style="font-size: 3vw !important;">Ice</span>
+                                    </div>
+                                    <div class="pointer pointer-hover rounded-3" (click)="selectIconBox4(2)">
+                                        <img src="assets/images/snow_emoji.svg" height="35"> <span
+                                            class="ms-2"style="font-size: 3vw !important;">Snow</span>
+                                    </div>
+                                    <div class="pointer pointer-hover rounded-3 mt-2" (click)="selectIconBox4(3)">
+                                        <img src="assets/images/water_emoji.svg" height="35"> <span
+                                            class="ms-2"style="font-size: 3vw !important;">Water</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row position-relative">
+                                <div class="col-5 mx-auto my-3">
+                                    <button class="btn btn_pink w-100 h-100 fs1_3vw">Calculate</button>
+                                </div>
+                                <div class="position-absolute sm_circle" style="top: 0; left: 0; z-index: 1;">
+                            </div>
+                            <div class="row">
+                                <div class="col-11 mx-auto p-2 justify-content-between d-flex rounded-3 mt-2 align-items-center"
+                                    style="border: 1px dashed #FF54C7;">
+                                    <span class="fw-bold" style="font-size: 3vw !important;">Daily yield</span>
+                                    <span class="text_pink fw-bold" style="font-size: 3vw !important;">2 $FRMD</span>
+                                </div>
+                                <div class="col-11 mx-auto p-2 justify-content-between d-flex rounded-3 mt-3 align-items-center"
+                                    style="border: 1px dashed #FF54C7;">
+                                    <span class="fw-bold" style="font-size: 3vw !important;">Total cost </span>
+                                    <span class="text_pink fw-bold" style="font-size: 3vw !important;">300 $FRMD</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

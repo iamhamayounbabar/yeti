@@ -1,0 +1,47 @@
+<div class="container-fluid position-relative">
+    <div class="position-absolute blurry-circle d-none d-md-block" style="top: 0; right: -5vw; z-index: -1;"></div>
+    <div class="row" style="padding-top: 3vw;" *ngIf="selectedSwitchType == switchType.Yeti">
+        <div class="col-md-3 col-12" *ngFor="let data of yetiMarketStats; index as i">
+            <div class="br_2vw text-white" style="border: 1px solid #FF54C726; background-color: #1515154f; margin-top: 2vw; ">
+                <div class="col-11 mx-auto" style="margin-top: 1vw;">
+                    <img src="assets/images/{{data.tribe}}.svg" class="img_h">
+                    <span class="text_pink ms-3 inter-bold">{{data.tribe}}</span>
+                </div>
+                <hr class="mb-0">
+                <div class="col-11 mx-auto mb-2 d-flex justify-content-between">
+                    <div>
+                        <span class="text-secondary poppins-medium">Floor price</span>
+                    </div>
+                    <div>
+                        <span  class="me-2 text_pink">{{data.price}}</span>
+                        <a href="https://craft.network/collection/ytsc">
+                            <img src="assets/images/calque_2.png" class="pointer h2vh">
+                          </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="padding-top: 3vw;" *ngIf="selectedSwitchType == switchType.Farms">
+        <div class="col-md-4 col-12" *ngFor="let data of farm_dashboard">
+            <div class="br_2vw text-white" style="border: 1px solid #FF54C726; background-color: #1515154f;  margin-top: 2vw; ">
+                <div class="col-11 mx-auto" style=" margin-top: 2vw; ">
+                    <img src="{{data.img}}" class="img_h">
+                    <span class="text_pink ms-3 inter-bold">{{data.title}}</span>
+                </div>
+                <hr class="mb-0">
+                <div class="col-11 mx-auto mb-2 d-flex justify-content-between">
+                    <div>
+                        <span class="text-secondary poppins-medium">{{data.text}}</span>
+                    </div>
+                    <div>
+                        <span  class="me-2 text_pink inter-semi-bold">(soon)</span>
+                        <a href="https://www.example.com">
+                           <!-- <img src="{{data.icon}}" class="pointer h2vh" height="15" alt=""> -->
+                          </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

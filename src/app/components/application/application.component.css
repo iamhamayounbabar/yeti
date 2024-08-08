@@ -1,0 +1,136 @@
+.btn-circle {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #FF54C7;
+    border-radius: 60px;
+    color: white;
+}
+
+h5 {
+    font-size: 2vw;
+}
+
+.card-body {
+    background-color: transparent;
+}
+
+input {
+    border: 1px solid #FF54C740;
+    background-color: transparent;
+    border-radius: 2vw !important;
+    padding: 1vh;
+}
+
+input:focus {
+    box-shadow: none;
+    background-color: transparent;
+    color: white;
+    border: 1px solid #FF54C740;
+}
+
+.box {
+    border: 1px solid #FF54C740;
+    background-color: #15151577;
+    border-radius: 1vw;
+    padding: 1vw;
+}
+
+.rect {
+    border: 1px dashed #FF54C740;
+    background-color: #151515;
+    padding: .6vw;
+    border-radius: 1vw;
+}
+
+@media (width: 3840px){
+    .search_icon {
+        right: 27vh !important;
+    }
+}
+
+.form-select {
+    background-image: url(/assets/images/chevron_down.svg) !important;
+    background-size: 2vh 2vh;
+    border-radius: 2vw !important;
+    padding: 1vh;
+    cursor: pointer;
+}
+
+.box span {
+    font-size: 1vw !important;
+}
+
+.box h6 {
+    font-size: .9vw !important;
+}
+
+
+input::placeholder {
+    color: lightgray;
+}
+
+input {
+    background-color: transparent;
+}
+
+.text_s_10 {
+    font-size: .9vw;
+}
+
+@media (width < 600px){
+    .sm-position{
+        right: 4vh !important;
+    }
+
+    h5 {
+        font-size: 6vw;
+    }
+    
+    input {
+        border: 1px solid #FF54C740;
+        background-color: transparent;
+        border-radius: 6vw !important;
+        padding: 1vh;
+        font-size: 3vw !important;
+    }
+    
+    input:focus {
+        box-shadow: none;
+        background-color: transparent;
+        color: white;
+        border: 1px solid #FF54C740;
+    }
+    .form-select {
+        border-radius: 6vw !important;
+        padding: 1vh;
+        cursor: pointer;
+        font-size: 3vw;
+        margin-top: 2vh;
+    }
+
+    .box {
+        border: 1px solid #FF54C740;
+        background-color: #15151577;
+        border-radius: 3vw;
+        padding: 4vw;
+    }
+
+    .rect {
+        border: 1px dashed #FF54C740;
+        background-color: #151515;
+        padding: 2vw;
+        border-radius: 3vw;
+    }
+
+    .sm-img-35{
+        height: 35vh !important;
+    }
+
+    .box span {
+        font-size: 3.5vw !important;
+    }
+    
+    .box h6 {
+        font-size: 3vw !important;
+    }
+}

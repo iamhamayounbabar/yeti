@@ -1,0 +1,547 @@
+<div class="d-none d-md-block">
+    <img class="btn btn-primary" data-bs-toggle="modal" [attr.data-bs-target]="'#boost-breakdown1' + id"
+        src="assets/images/info_icon.png" class="pointer" style="height: 3vh;" alt="">
+</div>
+<div class="d-block d-md-none">
+    <img class="btn btn-primary" data-bs-toggle="modal" [attr.data-bs-target]="'#boost-breakdown2' + id"
+        src="assets/images/info_icon.png" class="pointer" height="15" alt="">
+</div>
+
+<div class="d-none d-md-block">
+    <div class="modal fade" [id]="'boost-breakdown1' + id" tabindex="-1" aria-labelledby="boost-breakdown"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content position-relative"
+                style=" width: 83vw !important; padding: 1vw !important; border: 2px solid #FF54C780; background: rgba(21, 21, 21, 1); z-index: 1; border-radius: 1vw;">
+                <div class="position-absolute blurry-circle d-none d-md-block" style="left: 20vw; top: 0; z-index: 1;">
+                </div>
+                <div class="modal-header border-0" style="padding: 1vh !important;">
+                    <h5 class="modal-title text-white" id="boost-breakdown" style="font-size: 2vw !important;">BOOST
+                        BREAKDOWN</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <hr style="border: .3vh solid rgba(255, 255, 255, 0.15) ;">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6" style="padding-right: 1vw;">
+                            <div class=" box">
+                                <div class="row justify-content-between">
+                                    <div class="col-md-11 col-5 mx-auto d-flex justify-content-between">
+                                        <h5 class="text_pink fw-bold" style="font-size: 1vw !important;">Synergy</h5>
+                                        <small class="text-secondary " style="font-size: .8vw !important;">(Boosts Yeti
+                                            Base
+                                            Rate)</small>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-11 col-11 mt-2vh mx-auto box  d-flex justify-content-between">
+                                        <h6 class="text-white m-0 " style="font-size: 1vw !important;">Unlock at level
+                                        </h6>
+                                        <h6 class="text_pink fw-bold m-0 " style="font-size: 1vw !important;">5</h6>
+                                    </div>
+                                    <div class="col-md-11 col-11 mt-2vh mx-auto box d-flex  justify-content-between  ">
+                                        <h6 class="m-0 text-white m-0" style="font-size: 1vw !important;">Boost</h6>
+                                        <h6 class="text_pink fw-bold m-0" style="font-size: 1vw !important;">5%</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" style="padding-right: 1vw;">
+                            <div class=" box">
+                                <div class="row justify-content-between">
+                                    <div class="col-md-11 mx-auto col-6 d-flex justify-content-between">
+                                        <h5 class="text_pink fw-bold text-start" style="font-size: 1vw !important;">
+                                            WATER YETI</h5>
+                                        <small class="text-secondary" style="font-size: .8vw !important;">(Boosts Entire
+                                            Farm Rate at All level)</small>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-11 col-11 mt-2vh mx-auto box d-flex justify-content-between">
+                                        <h6 class="text-secondary m-0" style="font-size: 1vw !important;">Unlock if a
+                                            water yeti is staked</h6>
+                                    </div>
+                                    <div class="col-md-11 col-11 mt-2vh mx-auto box  d-flex justify-content-between">
+                                        <h6 class=" text-white m-0" style="font-size: 1vw !important;">Boost</h6>
+                                        <h6 class="text_pink fw-bold m-0" style="font-size: 1vw !important;">25%</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2vh justify-content-between">
+                        <div class="col-md-6 ">
+                            <h5 class="text_pink fw-bold" style="font-size: 1vw !important;">FARM LEVEL</h5>
+                        </div>
+                        <div class="col-md-3 text-md-end">
+                            <span class="text-secondary" style="font-size: .8vw !important;">(Boosts Yeti Base
+                                Rate)</span>
+                        </div>
+                    </div>
+                    <div class="row mt-2vh position-relative">
+                        <div class="position-absolute blurry-circle d-none d-md-block"
+                            style="left: 0; top: 0; z-index: 1;"></div>
+                        <div class="col-md-12 text-secondary d-flex justify-content-between overFlow_auto hide_scroll">
+                            <div style="padding-right: 1vw;">
+                                <div class="level-box" style="font-size: .8vw !important;">
+                                    <div class="my-1">
+                                        <small>Level 1</small>
+                                    </div>
+                                    <div class="mb-1 mt-2">
+                                        <small>0</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding-right: 1vw;">
+                                <div class="level-box" style="font-size: .8vw !important;">
+                                    <div class="my-1">
+                                        <small>Level 2</small>
+                                    </div>
+                                    <div class="mb-2 mt-2">
+                                        <small>4%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding-right: 1vw;">
+                                <div class="level-box" style="font-size: .8vw !important;">
+                                    <div class="my-1">
+                                        <small>Level 3</small>
+                                    </div>
+                                    <div class="mb-2 mt-2">
+                                        <small>8%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding-right: 1vw;">
+                                <div class="level-box" style="font-size: .8vw !important;">
+                                    <div class="my-1">
+                                        <small>Level 4</small>
+                                    </div>
+                                    <div class="mb-2 mt-2">
+                                        <small>12%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding-right: 1vw;">
+                                <div class="level-box" style="font-size: .8vw !important;">
+                                    <div class="my-1">
+                                        <small>Level 5</small>
+                                    </div>
+                                    <div class="mb-1 mt-2">
+                                        <small>18%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding-right: 1vw;">
+                                <div class="level-box" style="font-size: .8vw !important;">
+                                    <div class="my-1">
+                                        <small>Level 6</small>
+                                    </div>
+                                    <div class="mb-1 mt-2">
+                                        <small>24%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding-right: 1vw;">
+                                <div class="level-box" style="font-size: .8vw !important;">
+                                    <div class="my-1">
+                                        <small>Level 7</small>
+                                    </div>
+                                    <div class="mb-1 mt-2">
+                                        <small>30%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding-right: 1vw;">
+                                <div class="level-box" style="font-size: .8vw !important;">
+                                    <div class="my-1">
+                                        <small>Level 8</small>
+                                    </div>
+                                    <div class="mb-1 mt-2">
+                                        <small>39%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding-right: 1vw;">
+                                <div class="level-box" style="font-size: .8vw !important;">
+                                    <div class="my-1">
+                                        <small>Level 9</small>
+                                    </div>
+                                    <div class="mb-1 mt-2">
+                                        <small>48%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding-right: 1vw;">
+                                <div class="level-box" style="font-size: .8vw !important;">
+                                    <div class="my-1">
+                                        <small>Level 10</small>
+                                    </div>
+                                    <div class="mb-1 mt-2">
+                                        <small>60%</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between position-relative">
+                        <div class="position-absolute blurry-circle d-none d-md-block"
+                            style="left: 40vw; top: 0; z-index: 1;"></div>
+                        <div class="col-md-3 mt-2vh">
+                            <h5 class="text_pink fw-bold" style="font-size: 1vw !important;">MAX POSSIBLE BOOST</h5>
+                        </div>
+                        <div class="col-md-3 mt-2vh text-md-end">
+                            <span class="text-secondary" style="font-size: .8vw !important;">(Synergy, Farm and Water
+                                Yeti)</span>
+                        </div>
+                    </div>
+                    <div class="row mt-2vh">
+                        <div class="col-12 d-flex justify-content-between text-secondary overFlow_auto hide_scroll">
+                            <div style="padding-right: 1vw;">
+                                <div class="level-box2" style="font-size: .8vw !important;">
+                                    <div class="my-2">
+                                        <small>25%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding-right: 1vw;">
+                                <div class="level-box2" style="font-size: .8vw !important;">
+                                    <div class="my-2">
+                                        <small>30%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding-right: 1vw;">
+                                <div class="level-box2" style="font-size: .8vw !important;">
+                                    <div class="my-2">
+                                        <small>35%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding-right: 1vw;">
+                                <div class="level-box2" style="font-size: .8vw !important;">
+                                    <div class="my-2">
+                                        <small>40%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding-right: 1vw;">
+                                <div class="level-box2" style="font-size: .8vw !important;">
+                                    <div class="my-2">
+                                        <small>54.88%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding-right: 1vw;">
+                                <div class="level-box2" style="font-size: .8vw !important;">
+                                    <div class="my-2">
+                                        <small>62.75%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding-right: 1vw;">
+                                <div class="level-box2" style="font-size: .8vw !important;">
+                                    <div class="my-2">
+                                        <small>70.63%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding-right: 1vw;">
+                                <div class="level-box2" style="font-size: .8vw !important;">
+                                    <div class="my-2">
+                                        <small>82.44%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding-right: 1vw;">
+                                <div class="level-box2" style="font-size: .8vw !important;">
+                                    <div class="my-2">
+                                        <small>94.25%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding-right: 1vw;">
+                                <div class="level-box2" style="font-size: .8vw !important;">
+                                    <div class="my-2">
+                                        <small>110%</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="d-block d-md-none">
+    <div class="modal fade" [id]="'boost-breakdown2' + id" tabindex="-1" aria-labelledby="boost-breakdown"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content" style="border: 2px solid #FF54C780; background-color: #151515;">
+                <div class="modal-header border-0" style="padding: 3vw !important;">
+                    
+                    <h5 class="modal-title text-white" id="boost-breakdown" style="font-size: 5vw!important;">BOOST
+                        BREAKDOWN</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <hr style="border: .2vh solid rgba(255, 255, 255, 0.15) ;">
+                <div class="modal-body">
+                    <div class="row position-relative">
+                        <div class="position-absolute sm-blurry-circle d-block d-md-none" style="right: 15vw; top: -15vh; z-index: 1;">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <h5 class="text_pink fw-bold" style="font-size: 4vw;">Synergy</h5>
+                                    <small class="text-secondary" style="font-size: 3vw;">(Boosts Yeti Base
+                                        Rate)</small>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 my-1 mx-auto ">
+                                    <div class=" box rounded-3 d-flex justify-content-between p-2"
+                                        style="background-color: #151515;">
+                                        <h6 class="text-white m-0 " style="font-size: 4vw;">Unlock at level</h6>
+                                        <h6 class="text_pink fw-bold m-0 " style="font-size: 4vw;">5</h6>
+                                    </div>
+                                    <div class="box rounded-3 d-flex justify-content-between p-2 mt-2"
+                                        style="background: #151515;">
+                                        <h6 class="m-0 text-white m-0" style="font-size: 4vw;">Boost</h6>
+                                        <h6 class="text_pink fw-bold m-0" style="font-size: 4vw;">5%</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="border: .2vh solid rgba(255, 255, 255, 0.15) ;">
+                        </div>
+                        <div class="col-md-6 mt-2 position-relative">
+                            <div class="position-absolute sm-blurry-circle d-block d-md-none" style="left: 0; top: -30vh; z-index: 1;">
+                            </div>
+                           
+                            <div class="row justify-content-between">
+                                <div class="col-md-4">
+                                    <h5 class="text_pink fw-bold text-start" style="font-size: 4vw;">WATER YETI</h5>
+                                    <small class="text-secondary" style="font-size: 3vw;">(Boosts Entire Farm Rate
+                                        at All level)</small>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 my-1 mx-auto ">
+                                    <div class="box rounded-3 d-flex justify-content-between p-2"
+                                        style="background: #151515;">
+                                        <h6 class="text-secondary m-0" style="font-size: 4vw;">Unlock if a water
+                                            yeti is staked</h6>
+                                    </div>
+                                    <div class="box rounded-3 d-flex justify-content-between p-2 mt-2"
+                                        style="background: #151515;">
+                                        <h6 class=" text-white m-0" style="font-size: 4vw;">Boost</h6>
+                                        <h6 class="text_pink fw-bold m-0" style="font-size: 4vw;">25%</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="border: .2vh solid rgba(255, 255, 255, 0.15) ;">
+                        </div>
+                    </div>
+                    <div class="row mt-2 justify-content-between position-relative">
+                       
+                        <div class="col-md-6 ">
+                            <h5 class="text_pink fw-bold" style="font-size: 4vw;">FARM LEVEL</h5>
+                        </div>
+                        <div class="col-md-3 text-md-end">
+                            <span class="text-secondary" style="font-size: 3vw;">(Boosts Yeti Base Rate)</span>
+                        </div>
+                    </div>
+                    <div class="position-absolute sm-blurry-circle d-block d-md-none" style="right: 0; top: -10vh; z-index: 1;">
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-12 text-secondary d-flex justify-content-between overFlow_auto hide_scroll">
+                            <div class="p-1">
+                                <div class="box">
+                                    <div class="my-1">
+                                        <small>Level 1</small>
+                                    </div>
+                                    <div class="mb-1 mt-2">
+                                        <small>0</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-1">
+                                <div class="box">
+                                    <div class="my-1">
+                                        <small>Level 2</small>
+                                    </div>
+                                    <div class="mb-2 mt-2">
+                                        <small>4%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-1">
+                                <div class="box">
+                                    <div class="my-1">
+                                        <small>Level 3</small>
+                                    </div>
+                                    <div class="mb-2 mt-2">
+                                        <small>8%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-1">
+                                <div class="box">
+                                    <div class="my-1">
+                                        <small>Level 4</small>
+                                    </div>
+                                    <div class="mb-2 mt-2">
+                                        <small>12%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-1">
+                                <div class="box">
+                                    <div class="my-1">
+                                        <small>Level 5</small>
+                                    </div>
+                                    <div class="mb-1 mt-2">
+                                        <small>18%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-1">
+                                <div class="box">
+                                    <div class="my-1">
+                                        <small>Level 6</small>
+                                    </div>
+                                    <div class="mb-1 mt-2">
+                                        <small>24%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-1">
+                                <div class="box">
+                                    <div class="my-1">
+                                        <small>Level 7</small>
+                                    </div>
+                                    <div class="mb-1 mt-2">
+                                        <small>30%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-1">
+                                <div class="box">
+                                    <div class="my-1">
+                                        <small>Level 8</small>
+                                    </div>
+                                    <div class="mb-1 mt-2">
+                                        <small>39%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-1">
+                                <div class="box">
+                                    <div class="my-1">
+                                        <small>Level 9</small>
+                                    </div>
+                                    <div class="mb-1 mt-2">
+                                        <small>48%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-1">
+                                <div class="box">
+                                    <div class="my-1">
+                                        <small>Level 10</small>
+                                    </div>
+                                    <div class="mb-1 mt-2">
+                                        <small>60%</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="col-md-3 mt-2">
+                            <hr style="border: .2vh solid rgba(255, 255, 255, 0.15) ;">
+                            <h5 class="text_pink fw-bold" style="font-size: 4vw;">MAX POSSIBLE BOOST</h5>
+                            <span class="text-secondary" style="font-size: 3vw;">(Synergy, Farm and Water Yeti)</span>
+                        </div>
+                    </div>
+                    <div class="row my-2">
+                        <div class="col-12 d-flex justify-content-between text-secondary overFlow_auto hide_scroll">
+                            <div class="p-1">
+                                <div class="box" >
+                                    <div class="my-2">
+                                        <small>25%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-1">
+                                <div class="box" >
+                                    <div class="my-2">
+                                        <small>30%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-1">
+                                <div class="box" >
+                                    <div class="my-2">
+                                        <small>35%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-1">
+                                <div class="box" >
+                                    <div class="my-2">
+                                        <small>40%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-1">
+                                <div class="box" >
+                                    <div class="my-2">
+                                        <small>54.88%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-1">
+                                <div class="box" >
+                                    <div class="my-2">
+                                        <small>62.75%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-1">
+                                <div class="box" >
+                                    <div class="my-2">
+                                        <small>70.63%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-1">
+                                <div class="box" >
+                                    <div class="my-2">
+                                        <small>82.44%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-1">
+                                <div class="box" >
+                                    <div class="my-2">
+                                        <small>94.25%</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-1">
+                                <div class="box" >
+                                    <div class="my-2">
+                                        <small>110%</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

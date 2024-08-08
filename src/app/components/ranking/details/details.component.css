@@ -1,0 +1,17 @@
+.btn-circle{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 25px;
+    height: 25px;
+    background: #FF54C7;
+    border-radius: 60px;
+}
+
+.pointer:hover{
+    color: #FF54C7;
+}
+
+.fs0_8vw{
+    font-size: 0.7vw;
+}

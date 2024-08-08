@@ -1,0 +1,62 @@
+.box {
+    border: 1px dashed rgba(255, 84, 199, 0.25);
+    border-radius: 1vw;
+    text-align: center;
+    padding: 1vw;
+    background-color: rgba(21, 21, 21, 1);
+}
+
+.level-box {
+    border: 1px dashed #FF54C780;
+    border-radius: 1.5vw;
+    text-align: center;
+    padding: 2vw;
+    width: 7vw;
+    height: 17vh;
+}
+
+.level-box2 {
+    border: 1px dashed #FF54C780;
+    border-radius: 1vw;
+    width: 7vw;
+    text-align: center;
+    padding: 1vw;
+}
+
+@media (width < 600px){
+    .box{
+        min-width: 22vw !important;
+    }
+    .fs1_2vw{
+        font-size: 1.9vh !important;
+    }
+    .fs0_9vw{
+        font-size: 2vh !important;
+    }
+
+    .box {
+        border: 1px dashed rgba(255, 84, 199, 0.25);
+        border-radius: 3vw;
+        text-align: center;
+        padding: 1.2vw;
+        background-color: rgba(21, 21, 21, 1);
+    }
+}
+
+.blurry-circle {
+    width: 10vw;
+    height: 25vh;
+    border-radius: 50%;
+    z-index: -1;
+    background: rgba(255, 84, 199, 0.7);
+    filter: blur(16vh);
+}
+
+.sm-blurry-circle {
+    width: 30vw;
+    height: 20vh;
+    border-radius: 50%;
+    z-index: -1;
+    background: rgba(255, 84, 199, 0.7);
+    filter: blur(16vh);
+}

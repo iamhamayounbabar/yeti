@@ -1,0 +1,155 @@
+<div class="row position-relative">
+    <!-- background icon  -->
+    <div class="d-none d-md-block mt-5">
+        <div class=" position-absolute " style="right: 0; top:25vh;">
+        </div>
+    </div>
+    <div class="col-md-12 mx-auto ">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center mt-5vh">
+                <img src="assets/images/profile.png" class="rounded-circle sm-img-10"
+                    style="height: 10vh; margin-right: 1vw;" alt="">
+                <div class="position-relative">
+                    <h5 class="m-0 text-white inter-bold">Dashboard</h5>
+                    <small class="text_pink poppins-regular">Last update 2 mins ago</small>
+                    <div class="position-absolute blurry-circle d-none d-md-block " style="left: -50vh; top: 0;"></div>
+                </div>
+            </div>
+            <div (click)="toggleIcons()" class="position-relative">
+                <img *ngIf="show_up_icon" src="assets/images/chevron_up.svg" class="btn_circle pointer chevron-img"
+                    data-bs-toggle="collapse" style="height: 5.5vh; width: 5.5vh;" data-bs-target="#collapseApp"
+                    aria-expanded="true" aria-controls="collapseApp" alt="">
+                <img *ngIf="!show_up_icon" src="assets/images/chevron_down.svg" class="btn_circle pointer chevron-img"
+                    data-bs-toggle="collapse" style="height: 5.5vh; width: 5.5vh;" data-bs-target="#collapseApp"
+                    aria-expanded="true" aria-controls="collapseApp" alt="">
+                    <div class="position-absolute blurry-circle d-none d-md-block " style="right: -15vh; top: 0;"></div>
+            </div>
+        </div>
+        <div class="collapse mt-5vh show" id="collapseApp">
+            <div class="card card-body p-0 border-0">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="pink_box" style="height: 93%;">
+                            <h6 class="text_pink inter-bold">YETI</h6>
+                            <table class="table text-center">
+                                <tr class="border-0 text">
+                                    <th class="text-start text-secondary poppins-medium" style="padding-left: .8vw;">
+                                        Tribe</th>
+                                    <th class=" text-secondary poppins-medium">Total</th>
+                                    <th class=" text-secondary poppins-medium">Eligible</th>
+                                    <th class=" text-secondary poppins-medium">Staked</th>
+                                    <th class=" text-secondary poppins-medium">Synergized %</th>
+                                </tr>
+                                <tbody>
+                                    <tr class="">
+                                        <td class="text-start"><img src="assets/images/Cloud.svg" style="height: 2vw; width: 2vw;"
+                                                class="rounded-circle img-h" alt=""></td>
+                                        <td class="text-white inter-semi-bold">8</td>
+                                        <td class="text-white inter-semi-bold">5</td>
+                                        <td class="text-white inter-semi-bold">3</td>
+                                        <td class="text-white inter-semi-bold">75</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start"><img src="assets/images/Ice.svg" style="height: 2vw; width: 2vw;"
+                                                class="rounded-circle img-h" alt=""></td>
+                                        <td class="text-white inter-semi-bold">9</td>
+                                        <td class="text-white inter-semi-bold">5</td>
+                                        <td class="text-white inter-semi-bold">3</td>
+                                        <td class="text-white inter-semi-bold">100</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start"><img src="assets/images/Snow.svg" style="height: 2vw; width: 2vw;"
+                                                class="rounded-circle img-h" alt=""></td>
+                                        <td class="text-white inter-semi-bold">6</td>
+                                        <td class="text-white inter-semi-bold">5</td>
+                                        <td class="text-white inter-semi-bold">3</td>
+                                        <td class="text-white inter-semi-bold">90</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start"><img src="assets/images/Water.svg" style="height: 2vw; width: 2vw;"
+                                                class="rounded-circle img-h" alt=""></td>
+                                        <td class="text-white inter-semi-bold">7</td>
+                                        <td class="text-white inter-semi-bold">5</td>
+                                        <td class="text-white inter-semi-bold">3</td>
+                                        <td class="text-white inter-semi-bold">100</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-4 position-relative">
+                        <div class="position-absolute sm_circle d-block d-md-none" style=" bottom: 0; right: 0;"></div>
+                        <div class="pink_box" style="height: 93%;">
+                            <h6 class="text_pink inter-bold">FARMS</h6>
+                            <table class="table text-center">
+                                <tr class="border-0 text">
+                                    <th class="text-start text-sm text-secondary poppins-medium"
+                                        style="padding-left: .8vw;">Tribe</th>
+                                    <th class="text-start text-sm text-secondary poppins-medium">Type</th>
+                                    <th class=" text-sm text-secondary poppins-medium">Owned</th>
+                                    <th class=" text-sm text-secondary poppins-medium">Maxed out %</th>
+                                    <th class=" text-sm text-secondary poppins-medium">Daily yield $FRMD</th>
+                                </tr>
+                                <tbody>
+                                    <tr class="">
+                                        <td class="text-start"><img src="assets/images/Cloud.svg" style="height: 2vw; width: 2vw;"
+                                            class="rounded-circle img-h" alt=""></td>
+                                        <td class="text_pink text-start text_s_10 text_sm inter-semi-bold" style="padding-top: 11px;">Cloud nine</td>
+                                        <td class="text-white inter-semi-bold">8</td>
+                                        <td class="text-white inter-semi-bold">100</td>
+                                        <td class="text-white inter-semi-bold">15</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start"><img src="assets/images/Ice.svg" style="height: 2vw; width: 2vw;"
+                                            class="rounded-circle img-h" alt=""></td>
+                                        <td class="text_pink text-start text_s_10 text_sm inter-semi-bold" style="padding-top: 11px;">Arctic glacier</td>
+                                        <td class="text-white inter-semi-bold">9</td>
+                                        <td class="text-white inter-semi-bold">75</td>
+                                        <td class="text-white inter-semi-bold">10</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start"><img src="assets/images/Snow.svg" style="height: 2vw; width: 2vw;"
+                                            class="rounded-circle img-h" alt=""></td>
+                                        <td class="text_pink text-start text_s_10 text_sm inter-semi-bold" style="padding-top: 11px;">Frosty peak</td>
+                                        <td class="text-white inter-semi-bold">6</td>
+                                        <td class="text-white inter-semi-bold">80</td>
+                                        <td class="text-white inter-semi-bold">8</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="pink_box" style="height: 93%;">
+                            <h6 class="text_pink mb-0 inter-bold">{{selectedFarmName ? selectedFarmName : 'ALL FARM STATISTICS'}}</h6>
+                            <table class="table text-center" style="margin-top: 1rem;">
+                                <tbody>
+                                    <tr class="padding">
+                                        <td class="text-start inter-semi-bold  text-white text_sm">Farm efficiency
+                                        </td>
+                                        <td class="text_pink  inter-semi-bold text-end ">23%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start inter-semi-bold  text-white text_sm">Daily production</td>
+                                        <td class="text_pink  inter-semi-bold text-end ">33 $FRMD</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start inter-semi-bold  text-white text_sm ">$FRMD farmed</td>
+                                        <td class="text_pink  inter-semi-bold text-end ">9000</td>
+                                    </tr>
+                                    <tr class="padding">
+                                        <td class="text-start inter-semi-bold  text-white sm_pt"
+                                            style="border: 1px dashed #FF54C7; border-right: 0; padding-left: 1vw !important;">Unclaimed $FRMD</td>
+                                        <td class="text_pink  inter-semi-bold text-end "
+                                            style="border-top: 1px dashed #FF54C7; border-bottom: 1px dashed #FF54C7; border-right: 1px dashed #FF54C7;">
+                                            1200 <button class="btn btn_pink p-0 ps-3 pe-3 ms-2">Claim</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,492 @@
+<div class="container-fluid pb-5">
+    <app-navbar></app-navbar>
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            <app-dashboard selectedFarmName="Frosty Peak #{{farmIdClicked}}"></app-dashboard>
+        </div>
+    </div>
+
+    <div class="position-absolute sm_circle d-block d-md-none" style=" top: 9%; right: 0;"></div>
+    <div class="position-absolute sm_circle d-block d-md-none" style=" top: 38%; left: 0;"></div>
+    <div class="position-absolute sm_circle d-block d-md-none" style=" top: 47%; right: 0;"></div>
+    <div class="position-absolute sm_circle d-block d-md-none" style=" top: 65%; "></div>
+    <div class="position-absolute sm_circle d-block d-md-none" style=" top: 73%; "></div>
+    <!-- background icon  -->
+    <div class="d-none d-md-block mt-5">
+        <div class=" position-absolute " style="right: 0; top:9%;">
+            <img src="assets/images/bg_icon7.svg" height="170" alt="">
+        </div>
+        <!-- back ground circle  -->
+        <div class="position-absolute blurry-circle d-none d-md-block" style="top: 2%; right: 0; z-index: -1;"></div>
+        <div class="position-absolute blurry-circle d-none d-md-block" style="top: 9%; left: 0; z-index: -1;"></div>
+    </div>
+    <div class="position-fixed mbl_bottom" style="right: 0; top: 50vh; z-index: 99999;">
+        <app-calculator-modal></app-calculator-modal>
+    </div>
+
+    <div *ngIf="!farmSelected">
+        <div class="row">
+            <div class="col-md-10 col-11 mx-auto text-white sm-rounded" style="border: 1px dashed #FF54C780;background: #1515154f;border-radius: .8vw; padding: 1vw; margin-top: 5vh;
+           ">
+                <span style="font-size: 1.5vw" class="sm-text-3">
+                    Select a farm to begin staking
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="farmSelected" id="farmDetail">
+        <div class="row">
+            <div class="col-md-10 col-11 box3 mx-auto text-white">
+                <div class="row justify-content-between">
+                    <div class="d-flex d-block d-md-none">
+                        <h3 class="Inter-bold px-2 m-0">  Frosty Peak # {{farmIdClicked}}</h3>
+                        <img src="assets/images/edit_icon.svg" class="pointer ms-2 rounded-circle bg_pink p-1"
+                            height="30" width="30" alt="">
+                    </div>
+                    <div class="col-md-5 position-relative">
+                        <section id="frosty" class="d-none d-md-block">
+                            <div class="carousel-cell mx-auto" style="margin-left:5px !important;">
+                                <img [src]="img" class="w-90" style="border-radius: 1vw;">
+                            </div>
+                        </section>
+
+                    </div>
+                    <div class="col-md-7 position-relative">
+                        <!-- back ground circle  -->
+                        <div class="position-absolute blurry-circle d-none d-md-block "
+                            style="top: 20vh; right: 20vw; z-index: -1;"></div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row d-none d-md-block">
+                                    <div class="col-8 d-flex align-items-center">
+                                        <h3 class="inter-bold mx-2">Frosty Peak {{farmIdClicked}}</h3>
+                                        <img src="assets/images/edit_icon.svg"
+                                            class="pointer ms-2 rounded-circle bg_pink"
+                                            style="height: 5vh; width: 5vh; padding: .5vw;" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-12 p-2 desc-text" style="margin-top: 2vh;">
+                                    <h6 class="inter-bold text_pink">DESCRIPTION</h6>
+                                    <p class="text-secondary text-sm poppins-regular" style="font-size: .8vw ;">
+                                        Congratulations on owning this
+                                        YTSC Crypto
+                                        Farm! Stake
+                                        your
+                                        Yeti NFTs, upgrade your Farm, and unlock synergies to maximize your $FRMD
+                                        earnings.
+                                        Embrace the gamified staking experience and make the most out of your Yeti
+                                        journey.
+                                        Happy farming!
+                                    </p>
+                                    <div class="col-md-12" style="margin-top: 5vh;">
+                                        <h6 class="text_pink inter-bold">TRAITS</h6>
+                                        <div class="row" style="margin-top: 2vh;">
+                                            <div class="col-md-3 col-4" style="margin-bottom: 2vh; padding-right: .8vw;"
+                                                *ngFor="let data of selectedFarmTraits; let i = index">
+                                                <div class="sm-rounded"
+                                                    style="border: 1px dashed #FF54C780; border-radius: .6vw; padding: .4vw;">
+                                                    <small class="text-secondary poppins-medium truncate-text"
+                                                        style="font-size: .7vw;">{{data.trait_type}}</small>
+                                                    <h6 class="text_pink inter-semi-bold truncate-text"
+                                                        style="font-size: .8vw;">{{data.value}}</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- background icon  -->
+    <div class="d-none d-md-block mt-5">
+        <div class=" position-absolute " style="left: 0; top:45%;">
+            <img src="assets/images/bg_icon8.svg" height="170" alt="">
+        </div>
+        <!-- back ground circle  -->
+        <div class="position-absolute blurry-circle d-none d-md-block" style="top: 45%; left: 0; z-index: -1;">
+        </div>
+        <div class="position-absolute blurry-circle d-none d-md-block" style="top: 50%; right: 0; z-index: -1;">
+        </div>
+        <div class="position-absolute blurry-circle d-none d-md-block" style="top: 75%;  z-index: -1;"></div>
+    </div>
+    <div class="row" *ngIf="farmSelected">
+        <div class="col-md-10 col-11 mx-auto">
+            <div class="row">
+                <div class="col-md-4 mt-2vh sm-pe-0" style="padding-right: 1vw;">
+                    <div class="box4">
+                        <h5 class="text_pink inter-bold">STAKING</h5>
+                        <small class="text-white inter-semi-bold">Select the Tribe Logo of the Yeti you wish to
+                            stake.</small><br>
+                        <small class=" text-secondary poppins-regular">Click on the Yeti pfp you wish to stake in this
+                            farm.
+                        </small>
+                        <div class="d-flex justify-content-between mt-2">
+                            <div class="pointer p-2 rounded-2 {{yetiSelected == yetiType.Cloud ? 'stake-border' : '' }}"
+                                (click)="yetiSelected = yetiSelected ? undefined : yetiType.Cloud;filterYeti();"
+                                style="background-color: #151515; box-shadow: 0px 0px 25px rgba(255, 84, 199, 0.25);">
+                                <img src="assets/images/Cloud.svg" class="h-img" style="height: 3.5vw; width: 3.5vw;">
+                            </div>
+                            <div class="pointer p-2 rounded-2 {{yetiSelected == yetiType.Ice ? 'stake-border' : '' }}"
+                                (click)="yetiSelected = yetiSelected ? undefined : yetiType.Ice;filterYeti();"
+                                style="background-color: #151515; box-shadow: 0px 0px 25px rgba(255, 84, 199, 0.25);">
+                                <img src="assets/images/Ice.svg" class="h-img" style="height: 3.5vw; width: 3.5vw;">
+                            </div>
+                            <div class="pointer p-2 rounded-2 {{yetiSelected == yetiType.Snow ? 'stake-border' : '' }}"
+                                (click)="yetiSelected = yetiSelected ? undefined : yetiType.Snow;filterYeti();"
+                                style="background-color: #151515; box-shadow: 0px 0px 25px rgba(255, 84, 199, 0.25);">
+                                <img src="assets/images/Snow.svg" class="h-img" style="height: 3.5vw; width: 3.5vw;">
+                            </div>
+                            <div class="pointer p-2 rounded-2 {{yetiSelected == yetiType.Water ? 'stake-border' : '' }}"
+                                (click)="yetiSelected = yetiSelected ? undefined : yetiType.Water;filterYeti();"
+                                style="background-color: #151515; box-shadow: 0px 0px 25px rgba(255, 84, 199, 0.25);">
+                                <img src="assets/images/Water.svg" class="h-img" style="height: 3.5vw; width: 3.5vw;">
+                            </div>
+                        </div>
+
+                        <!-- carousel  -->
+                        <section id="staking">
+                            <carousel [cellsToShow]="1" style="height: 29vh;" [cellWidth]="150" [arrows]="true">
+                                <ng-container *ngFor="let cell of [].constructor(filteredYetis.length); let i = index;">
+                                    <div class="carousel-cell" *ngIf="i % 7 == 0">
+                                        <div class="row">
+                                            <div class="col-3 mt-2vh">
+                                                <div class="text-center" *ngIf="getAdditionalYetiByIndex(i, 0)">
+                                                    <img [src]="filteredYetis[i].image"
+                                                        class="rounded-circle border pointer img-fluid"
+                                                        (click)="addYetiInStake(i)">
+                                                </div>
+                                                <div class="mt-2vh text-center" *ngIf="getAdditionalYetiByIndex(i, 1)">
+                                                    <img [src]="getAdditionalYetiByIndex(i, 1)?.image"
+                                                        class="rounded-circle border pointer img-fluid"
+                                                        (click)="addYetiInStake(i+1)">
+                                                </div>
+                                            </div>
+                                            <div class="col-3 mt-2vh">
+                                                <div *ngIf="getAdditionalYetiByIndex(i, 2)" class="text-center">
+                                                    <img [src]="getAdditionalYetiByIndex(i, 2)?.image"
+                                                        class="rounded-circle border pointer img-fluid"
+                                                        (click)="addYetiInStake(i+2)">
+                                                </div>
+                                                <div class="mt-2vh text-center" *ngIf="getAdditionalYetiByIndex(i, 3)">
+                                                    <img [src]="getAdditionalYetiByIndex(i, 3)?.image"
+                                                        class="rounded-circle border pointer img-fluid"
+                                                        (click)="addYetiInStake(i+3)">
+                                                </div>
+                                            </div>
+                                            <div class="col-3 mt-2vh">
+                                                <div *ngIf="getAdditionalYetiByIndex(i, 4)" class="text-center">
+                                                    <img [src]="getAdditionalYetiByIndex(i, 4)?.image"
+                                                        class="rounded-circle border pointer img-fluid"
+                                                        (click)="addYetiInStake(i+4)">
+                                                </div>
+                                                <div class="mt-2vh text-center" *ngIf="getAdditionalYetiByIndex(i, 5)">
+                                                    <img [src]="getAdditionalYetiByIndex(i, 5)?.image"
+                                                        class="rounded-circle border pointer img-fluid"
+                                                        (click)="addYetiInStake(i+5)">
+                                                </div>
+                                            </div>
+                                            <div class="col-3 mt-2vh">
+                                                <div *ngIf="getAdditionalYetiByIndex(i, 6)" class="text-center">
+                                                    <img [src]="getAdditionalYetiByIndex(i, 6)?.image"
+                                                        class="rounded-circle border pointer img-fluid"
+                                                        (click)="addYetiInStake(i+6)">
+                                                </div>
+                                                <div class="mt-2vh text-center" *ngIf="getAdditionalYetiByIndex(i, 7)">
+                                                    <img [src]="getAdditionalYetiByIndex(i, 7)?.image"
+                                                        class="rounded-circle border pointer img-fluid"
+                                                        (click)="addYetiInStake(i+7)">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </carousel>
+                            <div class="d-flex justify-content-between">
+                                <div class="rounded-circle ms-1 d-flex pointer height"
+                                    style="border: 1px dashed #FF54C7; background-color: #151515;">
+                                    <span *ngIf="stake1 == undefined"
+                                        class="mx-auto align-self-center text_pink plus-sm-text">+</span>
+                                    <img src="{{stake1.image}}" *ngIf="stake1 != undefined"
+                                        class="rounded-circle border" (click)="stake1 = undefined;filterYeti();">
+                                </div>
+                                <div class="rounded-circle d-flex pointer height"
+                                    style="border: 1px dashed #FF54C7; background-color: #151515;">
+                                    <span *ngIf="stake2 == undefined"
+                                        class="mx-auto align-self-center text_pink">+</span>
+                                    <img src="{{stake2.image}}" *ngIf="stake2 != undefined"
+                                        class="rounded-circle border" (click)="stake2 = undefined;filterYeti();">
+                                </div>
+                                <div class="rounded-circle d-flex pointer height"
+                                    style="border: 1px dashed #FF54C7; background-color: #151515;">
+                                    <span *ngIf="stake3 == undefined"
+                                        class="mx-auto align-self-center text_pink">+</span>
+                                    <img src="{{stake3.image}}" *ngIf="stake3 != undefined"
+                                        class="rounded-circle border" (click)="stake3 = undefined;filterYeti();">
+                                </div>
+                                <div class="rounded-circle me-1 d-flex pointer height"
+                                    style="border: 1px dashed #BAC4F6; background-color: #151515;">
+                                    <span *ngIf="stake4 == undefined" class="mx-auto align-self-center"
+                                        style="color: #BAC4F6;">+</span>
+                                    <img src="{{stake4.image}}" *ngIf="stake4 != undefined"
+                                        class="rounded-circle border" (click)="stake4 = undefined;filterYeti();">
+                                </div>
+                            </div>
+                        </section>
+                        <div class=" col-md-6 col-9 mx-auto mt-5vh">
+                            <button class="btn btn_pink w-100 sm-p-2" style="padding: .7vw;">Confirm and
+                                stake</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-8 mt-2vh box-5">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="d-none d-md-block">
+                                <h5 class="text_pink inter-bold">FARM UPGRADE</h5>
+                                <div class="d-flex align-items-center">
+                                    <small class="me-2 text-secondary text_s_10 poppins-medium">“Click on the level you
+                                        wish to
+                                        upgrade to”
+                                        that changes to “You have selected to upgrade to Level {{nextLevel >= 1 ?
+                                        nextLevel
+                                        : 'Not Selected'}}</small>
+                                    <app-boost-breakdown [id]="'1'"></app-boost-breakdown>
+                                </div>
+                            </div>
+                            <div class="d-block d-md-none">
+                                <h5 class="text_pink inter-bold">FARM UPGRADE</h5>
+                                <div class="d-flex ">
+                                    <app-boost-breakdown [id]="'2'"></app-boost-breakdown>
+                                    <small class="ms-2 text-secondary text_s_10 poppins-medium">“Click on the level you
+                                        wish to
+                                        upgrade to”
+                                        that changes to “You have selected to upgrade to Level {{nextLevel >= 1 ?
+                                        nextLevel
+                                        : 'Not Selected'}}</small>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <!-- TESTING -->
+                                <div class="mt-5vh d-none d-md-block">
+                                    <div class="position-relative" style="top: -2vh;">
+                                        <div class="connecting-line" *ngIf="currentLevel !== -1 && nextLevel !== -1"
+                                            [ngStyle]="getConnectingLineStyle()">
+                                            <span class="text-secondary current-text poppins-medium">Current</span>
+                                            <span class="text_pink next-text poppins-medium">Next</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-between p-3 mt-5vh">
+                                        <div class="col-1 pointer" *ngFor="let data of levels; let i = index"
+                                            style="border: 1px dashed #FF54C780; background-color: rgba(21, 21, 21, 0.25); border-radius: .6vw; padding: .6vw;"
+                                            [ngClass]="{
+                                                            'bg-all-selection': (i + 1) >= currentLevel && (i + 1) <= nextLevel,
+                                                            'active': (i + 1) === nextLevel,
+                                                            'box-shadow': (i + 1) === nextLevel,
+                                                            'current-level-box-color': (i + 1) === currentLevel,
+                                                          }" (click)="onLevelClick((i + 1))">
+                                            <h6
+                                                class="text-center poppins-medium mt-2 {{(i + 1) === nextLevel ? 'text-pink' : 'text-secondary'}}">
+                                                {{data.level}}</h6>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- TESTING -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between" style="padding: 1vw;">
+                        <div class="col-md-4 d-block d-md-none">
+                            <!-- add current level -->
+                            <label for="current-level" class="text-secondary poppins-medium mt-5vh">Your
+                                current
+                                level</label>
+                            <select class="form-select text-secondary rounded-3 mt-2vh" id="disable"
+                                aria-label="Disabled select example" disabled>
+                                <option class="poppins-medium" value="1">Level 1</option>
+                                <option class="poppins-medium" value="2">Level 2</option>
+                                <option class="poppins-medium" value="3">Level 3</option>
+                                <option class="poppins-medium" value="4">Level 4</option>
+                                <option class="poppins-medium" value="5">Level 5</option>
+                                <option class="poppins-medium" value="6">Level 6</option>
+                                <option class="poppins-medium" value="7">Level 7</option>
+                                <option class="poppins-medium" value="8">Level 8</option>
+                                <option class="poppins-medium" value="9">Level 9</option>
+                                <option class="poppins-medium" value="10">Level 10</option>
+                            </select>
+
+                            <label class="text-secondary  poppins-medium mt-5vh" for="level">Select next
+                                level</label>
+                            <select class="form-select text_pink text-white rounded-3 poppins-bold mt-2vh"
+                                [(ngModel)]="nextLevel">
+                                <option class="poppins-medium" value="1">Level 1</option>
+                                <option class="poppins-medium" value="2">Level 2</option>
+                                <option class="poppins-medium" value="3">Level 3</option>
+                                <option class="poppins-medium" value="4">Level 4</option>
+                                <option class="poppins-medium" value="5">Level 5</option>
+                                <option class="poppins-medium" value="6">Level 6</option>
+                                <option class="poppins-medium" value="7">Level 7</option>
+                                <option class="poppins-medium" value="8">Level 8</option>
+                                <option class="poppins-medium" value="9">Level 9</option>
+                                <option class="poppins-medium" value="10">Level 10</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 col-11 mx-auto text-center mt-5vh boost-box d-none d-md-block">
+                            <div class="text-h4">
+                                <h4 class="text_pink mt-2 inter-bold">Applied boost</h4>
+                            </div>
+                            <div class="text-h4-2">
+                                <h4 class=" mb-4 inter-bold text-white">60%</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-11 mx-auto text-center mt-5vh boost-box d-block d-md-none">
+                            <div class="text-h4">
+                                <h4 class="text_pink mt-2 inter-bold">Applied boost</h4>
+                            </div>
+                            <div class="text-h4-2">
+                                <h4 class=" mb-4 inter-bold text-white">60%</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mx-auto col-11 text-center mt-5vh boost-box">
+                            <div class="text-h4">
+                                <h4 class="text_pink mt-2 inter-bold">Productivity</h4>
+                            </div>
+                            <div class="text-h4-2">
+                                <h4 class=" mb-4 inter-bold text-white">{{productivity}} $FRMD / day</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-12 mx-auto pe-0 sm-pe-2">
+                            <div class="mt-5vh unlocked-box d-flex align-items-center">
+                                <img src="assets/images/click_pink.png" *ngIf="synergyBoosted.toLowerCase() === 'true'"
+                                    style="height: 3vh;" alt="">
+                                <img src="assets/images/click_gray.png" *ngIf="synergyBoosted.toLowerCase() === 'false'"
+                                    style="height: 1.5vh;" alt="">
+                                <span class="ms-2 poppins-medium"
+                                    [ngClass]="{'text_pink' : synergyBoosted.toLowerCase() === 'true'}"
+                                    style="color: #BAC4F680;">Synergy unlocked!</span>
+                            </div>
+                            <div class="mt-2vh unlocked-box d-flex align-items-center">
+                                <img src="assets/images/click_gray.png" *ngIf="waterBoosted.toLowerCase() === 'true'"
+                                    style="height: 1.5vh;" alt="">
+                                <img src="assets/images/cross_gray.svg" alt="" style="height: 1.5vh;"
+                                    *ngIf="waterBoosted.toLowerCase() === 'false'">
+                                <span class="ms-2 poppins-medium"
+                                    [ngClass]="{'text-water' : waterBoosted.toLowerCase() === 'true'}"
+                                    style="color: #BAC4F680;">Water boost</span>
+                            </div>
+                            <div class="mt-2vh unlocked-box d-flex align-items-center">
+                                <img src="assets/images/click_pink.png" alt="" style="height: 1.5vh;"
+                                    *ngIf="currentLevel == 10">
+                                <img src="assets/images/cross_gray.svg" alt="" style="height: 1.5vh;"
+                                    *ngIf="currentLevel < 10">
+                                <span class="ms-2 poppins-medium" [ngClass]="{'text_pink' : currentLevel == 10}"
+                                    style="color: #BAC4F680;">Maxed out</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="d-flex justify-content-between mx-auto cost-box" style="margin-top: 5vh;">
+                        <div>
+                            <h5 class=" mt-2 text-white ms-3 text_s_15 inter-semi-bold">Total cost </h5>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="text_pink me-3 m-0 mb_text text_s_15 inter-semi-bold">{{upgradeQuote |
+                                number:
+                                '1.0'}} $FRMD</h5>
+                            <button class="btn btn_pink  pe-3 ps-3 me-2 mb_text text_s_15"
+                                (click)="upgrade()">Upgrade</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5vh position-relative">
+        <div class="position-absolute sm_circle d-block d-md-none" style=" top: 0;"></div>
+        <div class="position-absolute sm_circle d-block d-md-none" style=" bottom: -40vh;"></div>
+        <div class="col-md-10 col-8 collection-text mx-auto">
+            <h4 class="text-white inter-bold">Farm Collection</h4>
+        </div>
+        <div class="position-absolute blurry-circle d-none d-md-block " style="top: 0; right: 0;"></div>
+        <div class="position-absolute blurry-circle d-none d-md-block " style="top: 50vh; left: 10vw;"></div>
+        <div class="row p-0 mt-2vh">
+            <div class="col-md-10 col-11 mx-auto hide_scroll">
+                <div class="d-none d-md-block">
+                    <section id="farms">
+                        <carousel [cellsToShow]="4" [cellWidth]="180" style="height: 50vh;"[arrows]="farms.length > 4 ? true:false">
+                            <ng-container *ngFor="let data of farms">
+                                <div class="carousel-cell"  (click)="selectFarm(data.edition)" style="padding-right: .7vw; cursor:pointer;">
+                                    <div>
+                                        <div class="box2">
+                                            <img class="w-100 sm-img-35" style="height: 23vh; border-radius: .6vw;"
+                                                src="{{data.image}}" alt="">
+                                            <span class="text-secondary poppins-medium">{{data.attributes[0].value}}</span>
+                                            <h6 class="text_pink fw-bold inter-bold">{{data.edition}}</h6>
+                                            <div class="rect d-flex justify-content-between">
+                                                <div>
+                                                    <h6 class="m-0 poppins-medium text-secondary">Level</h6>
+                                                    <span class="text_pink inter-semi-bold"*ngIf="data.detail">{{data.detail.level}}</span>
+                                                </div>
+                                                <div>
+                                                    <h6 class="m-0 poppins-medium text-secondary">Workers</h6>
+                                                    <span class="text_pink inter-semi-bold"*ngIf="data.detail">{{data.detail.yetisHoused.length}}</span>
+                                                </div>
+                                                <div>
+                                                    <h6 class="m-0 poppins-medium text-secondary">Productivity</h6>
+                                                    <span class="text_pink inter-semi-bold"*ngIf="data.detail">{{data.detail.dailyFrmdDistribution |
+                                                        number: '1.1-2'}}<span
+                                                            style="font-size: 1.6vh;">Day</span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-container>
+                        </carousel>
+                    </section>
+                </div>
+                <div class="d-block d-md-none ">
+                    <carousel [cellsToShow]="2" [cellWidth]="200" [dots]="true" [arrows]="false">
+                        <ng-container *ngFor="let data of farms">
+                            <div class="carousel-cell"  (click)="selectFarm(data.edition)" style="padding-right: .7vw;">
+                                <div>
+                                    <div class="box2" style="border-radius: 2vw !important; padding: 2vw !important;">
+                                        <img class="w-100 sm-img-35" style="height: 12vh; border-radius: 1vw;"
+                                            src="{{data.image}}" alt="">
+                                        <span class="text-secondary poppins-medium" style="font-size: 2vh !important;">{{data.attributes[0].value}}</span>
+                                        <h6 class="text_pink fw-bold inter-bold" style="font-size: 1.5vh !important;">{{data.edition}}</h6>
+                                        <div class="rect d-flex justify-content-between" style="padding: .8vw !important;">
+                                            <div>
+                                                <h6 class="m-0 p-0 poppins-medium text-secondary" style="font-size: 1.5vh !important;">Level</h6>
+                                                <span class="text_pink inter-semi-bold"style="font-size: 1.7vh !important;" *ngIf="data.detail">{{data.detail.level}}</span>
+                                            </div>
+                                            <div>
+                                                <h6 class="m-0 p-0 poppins-medium text-secondary" style="font-size: 1.5vh !important;">Workers</h6>
+                                                <span class="text_pink inter-semi-bold" style="font-size: 1.7vh !important;"*ngIf="data.detail">{{data.detail.yetisHoused.length}}</span>
+                                            </div>
+                                            <div>
+                                                <h6 class="m-0 p-0 poppins-medium text-secondary" style="font-size: 1.5vh !important;">Productivity</h6>
+                                                <span class="text_pink inter-semi-bold" style="font-size: 1.7vh !important;"*ngIf="data.detail">{{data.detail.dailyFrmdDistribution |
+                                                    number: '1.1-2'}}<span class="m-0 p-0"
+                                                        style="font-size: 1.2vh !important;">Day</span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </carousel>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

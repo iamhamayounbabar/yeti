@@ -1,0 +1,58 @@
+.filter{
+    z-index: 9999999;
+    border: 1px dashed rgba(255, 84, 199, 0.5);
+    border-radius: 24px;
+    min-width: 350px;
+    top: 50px;
+    left: 0px;
+    background: rgba(21, 21, 21, 0.9);
+    box-shadow: 17px 11px 50px 0px #151515;
+    backdrop-filter: blur(12.5px);
+    transform: translate3d(0, 0, 0);
+}
+
+.header{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.chips{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.chips > div{
+    border: 1px solid rgba(255, 84, 199, 0.25);
+    border-radius: 60px;
+    min-width: 85px;
+}
+
+.accordion {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.accordion-button{
+    box-shadow: none !important;
+}
+
+.accordion-button::after{
+    background-image: url(/assets/images/chevron_down_pink.png);
+    background-size: contain;
+    width: 15px;
+}
+
+.accordion-item{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+@media (width < 600px){
+    .filter{
+        left: 0;
+        top: 55px;
+    }
+}
+
+.form-check-input:checked {
+    background-color: #FF54C7 !important;
+    border-color: #FF54C7 !important;
+    box-shadow: none !important;
+}

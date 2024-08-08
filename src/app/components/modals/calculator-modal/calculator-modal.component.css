@@ -1,0 +1,51 @@
+select{
+    border: 1px solid #FF54C740;
+    background-color: transparent;
+    color: white;
+    font-size: 1vw;
+}
+
+.form-select {
+    background-image: url(/assets/images/chevron_down.svg) !important;
+    background-size: 2vh 2vh;
+    cursor: pointer;
+}
+
+h6{
+    font-size: 1vw !important;
+}
+
+select:focus{
+    box-shadow: none;
+    background-color: transparent;
+}
+
+h5{
+    font-size: 1vw !important;
+}
+
+span{
+    font-size: 1vw !important;
+}
+
+select{
+    background-color: transparent !important;
+}
+
+/* .btn_pink{
+    height: 7vh ;
+} */
+
+.pointer-hover:hover{
+    background-color: #ff54c7;
+    color: white;
+}
+
+.sm_circle {
+    width: 20vw;
+    height: 20vh;
+    border-radius: 50%;
+    z-index: -1;
+    background: rgba(255, 84, 199, 0.6);
+    filter: blur(11vh);
+}

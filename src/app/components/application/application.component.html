@@ -1,0 +1,92 @@
+<div class="container-fluid">
+    <app-navbar></app-navbar>
+    <app-dashboard></app-dashboard>
+    
+    <!-- calculator icon  -->
+    <div class="position-fixed mbl_bottom" style="right: 0; top: 50vh; z-index: 999999;">
+        <app-calculator-modal></app-calculator-modal>
+    </div>
+    <!-- background icon  -->
+    <div class="col-12 position-relative">
+        <div class="position-absolute d-none d-md-block" style="top: 800px;">
+            <img src="assets/images/bg_icon4.svg" height="170" alt="">
+        </div>
+    </div>
+    <div class="container">
+        <app-dashboard></app-dashboard>
+        <!-- background circles -->
+        <div class="position-absolute sm_circle d-block d-md-none" style=" top: 9%; right: 0;"></div>
+        <div class="position-absolute sm_circle d-block d-md-none" style=" top: 23%; right: 0;"></div>
+        <div class="position-absolute sm_circle d-block d-md-none" style=" top: 38%; left: 0;"></div>
+        <div class="position-absolute sm_circle d-block d-md-none" style=" top: 52%; right: 0;"></div>
+        <div class="position-absolute sm_circle d-block d-md-none" style=" top: 85%; "></div>
+        <div class="position-absolute blurry-circle d-none d-md-block " style="right: 0; top: 2%;"></div>
+        <div class="position-absolute blurry-circle d-none d-md-block " style="left: 0; top: 7%; width: 190px;"></div>
+        <!-- calculator icon  -->
+        <div class="position-fixed mbl_bottom" style="right: 0; top: 50vh; z-index: 999999;">
+            <app-calculator-modal></app-calculator-modal>
+        </div>
+        <div class="row my-4">
+            <div class="col-md-12 mx-auto position-relative">
+                <div class="row align-items-center">
+                    <div class="col-md-5 mbl_center">
+                        <h5 class="text-white inter-bold">Start farming</h5>
+                    </div>
+                    <div class="col-md-4 my-2 d-flex position-relative ms-auto align-items-center">
+                       
+                    </div>
+                    <div class="col-md-2 col-12">
+                        <select class="form-select text_s_10 rounded-5 p-2 ps-3 pe-3"
+                            style="background-color: transparent;border: 1px solid #FF54C740;">
+                            <option class="poppins-medium" value="">Filter by type</option>
+                            <option class="poppins-medium" value="Option 1">Option 1</option>
+                            <option class="poppins-medium" value="Option 2">Option 2</option>
+                            <option class="poppins-medium" value="Option 3">Option 2</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row pb-5 align-items-center d-flex">
+            <div routerLink="/farm-detail" class="col-md-3 my-2 pointer" *ngFor="let data of farm">
+                <div class="rounded-4" style="border: 1px solid #FF54C740; background-color: #15151577;">
+                    <div class="p-2">
+                        <img class="rounded-3 img-fluid border w-100" src={{data.image}} alt="">
+                        <span class="text-secondary text_s_10 poppins-medium">{{data.attributes[0].value}}</span>
+                        <h6  class="text_pink fw-bold inter-bold">ID#: {{data.edition}}</h6>
+                        <div class="rounded-3 d-flex justify-content-between p-2"
+                            style="border: 1px dashed #FF54C740; background-color: #151515;">
+                            <div>
+                                <h6 class="m-0 text_s_10 poppins-medium text-secondary">Level</h6>
+                                <span class="text_pink inter-semi-bold"></span>
+                            </div>
+                            <div>
+                                <h6 class="m-0 text_s_10 poppins-medium text-secondary">Workers</h6>
+                                <span class="text_pink inter-semi-bold"></span>
+                            </div>
+                            <div>
+                                <h6 class="m-0 text_s_10 poppins-medium text-secondary">Productivity</h6>
+                                <span class="text_pink inter-semi-bold"><span
+                                        style="font-size: 1.6vh;">Day</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 col-9 mb-5 pb-5 mx-auto text-center">
+                <button class="btn btn_pink w-100" (click)="loadmore()">Load more</button>
+                <h6 class="text-secondary my-2 poppins-medium" style="font-size: 1.7vh;">{{farm.length}} showing out of {{farmsOnAccount}}</h6>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 col-9 mt-10vh position-relative mx-auto text-center">
+            <button class="btn btn_pink w-100" (click)="loadmore()">Load more</button>
+            <h6 class="text-secondary my-2 poppins-medium" style="font-size: 1.7vh;">{{farms.length}} showing out of 85
+            </h6>
+            <div class="position-absolute blurry-circle d-none d-md-block " style="left: -50vh; top: 0;"></div>
+        </div>
+    </div>
+</div>
